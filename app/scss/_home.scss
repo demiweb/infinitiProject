@@ -59,11 +59,11 @@
   }
 }
 .wardrobe {
-  width: 810px;
-  height: 1034px;
+  width: 46.3542vw;
+  height: 53.8542vw;
   position: absolute;
-  bottom: 24px;
-  left: -100px;
+  bottom: 1.2500vw;
+  left: -5.2083vw;
   z-index: 1;
   .img {
     width: 100%;
@@ -99,10 +99,10 @@
 .mirror {
   position: absolute;
   z-index: 2;
-  width: 242px;
-  height: 250px;
-  top: 128px;
-  right: 33px;
+  width: 12.6042vw;
+  height: 13.0208vw;
+  top: 6.6667vw;
+  right: 1.7188vw;
   > img {
     width: 100%;
     height: 100%;
@@ -110,10 +110,10 @@
 }
 .mirror-imgs {
   position: absolute;
-  top: 40px;
-  right: 42px;
-  width: 135px;
-  height: 161px;
+  top: 2.0833vw;
+  right: 2.1875vw;
+  width: 7.0313vw;
+  height: 8.3854vw;
   mask-image: url("../img/mask-mirror.png");
   mask-size: 100% 100%;
   mask-position: left top;
@@ -135,10 +135,10 @@
   }
 }
 .chair-left {
-  width: 727px;
-  height: 605px;
-  bottom: 40px;
-  left: -95px;
+  width: 37.8646vw;
+  height: 31.5104vw;
+  bottom: 2.0833vw;
+  left: -4.9479vw;
   position: absolute;
   .img {
     width: 100%;
@@ -147,5 +147,174 @@
       width: 100%;
       height: 100%;
     }
+  }
+}
+
+.chair-right {
+  width: 37.8646vw;
+  height: 31.5104vw;
+  bottom: 1.5625vw;
+  right: -4.3229vw;
+  position: absolute;
+  .img {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.title-right {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  top: 7.5000vw;
+  right: 7.2917vw;
+  span {
+    font-weight: 500;
+    font-size: 1.3021vw;
+    line-height: 1.5104vw;
+    letter-spacing: 0.02em;
+    text-align: right;
+    color: #fff;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+  }
+  p {
+    font-weight: bold;
+    font-size: 2.6042vw;
+    letter-spacing: -0.01em;
+    line-height: 2.8646vw;
+    text-align: right;
+    color: #fff;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    margin-bottom: 4px;
+
+  }
+}
+.plates-center {
+  z-index: 2;
+  position: absolute;
+  //border: 1px solid red;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  ol {
+    display: flex;
+    width: 100%;
+    counter-reset: my-awesome-counter2;
+    li {
+      right: 0;
+      width: 100%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      counter-increment: my-awesome-counter2;
+      cursor: pointer;
+      p, span {
+        transition: color 0.3s ease;
+      }
+      &:hover {
+        p, span {
+          color: $pink;
+          transition: color 0.3s ease;
+
+        }
+      }
+      &::before {
+        content: counter(my-awesome-counter2);
+        font-weight: 900;
+        font-size: 2.6042vw;
+        line-height: 3.1250vw;
+        letter-spacing: -0.01em;
+        text-align: right;
+        color: #1b4d96;
+        text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+        position: absolute;
+
+      }
+      p {
+        font-weight: 900;
+        font-size: 1.3021vw;
+        line-height: 1.5104vw;
+        letter-spacing: 0.02em;
+        text-align: right;
+        color: #fff;
+        text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+      }
+      span {
+        font-weight: normal;
+        font-size: 1.3021vw;
+        line-height: 1.5104vw;
+        letter-spacing: 0.03em;
+        text-align: right;
+        color: #fff;
+        text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+      }
+      &:nth-child(1) {
+        //top: 9.1104vw;
+        bottom: 37.28vw;
+        padding-right: 9.5271vw;
+        &:before {
+          right: 5.7813vw;
+          top: 0.3646vw;
+        }
+      }
+      &:nth-child(2) {
+        //top: 15.1763vw;
+        bottom: 31.19vw;
+        padding-left: 10.6771vw;
+        &::before {
+          left: 6.2500vw;
+          top: 0.2083vw;
+        }
+        span {
+          letter-spacing: 0.02em;
+        }
+      }
+      &:nth-child(3) {
+        //top: 20.5929vw;
+        bottom: 25.78vw;
+        padding-right: 17.1213vw;
+        &::before {
+          top: 0.2083vw;
+          right: 13.2813vw;
+        }
+        span {
+          letter-spacing: 0.02em;
+        }
+      }
+      &:nth-child(even) {
+        align-items: flex-end;
+        p, span {
+          text-align: left;
+        }
+      }
+    }
+
+  }
+}
+.part-back {
+  transition: transform 0.5s linear;
+  &.hide {
+    transform: translate(0, -120%);
+    transition: transform 0.3s linear;
+
+  }
+}
+.backblock {
+  transition: opacity 0.3s ease;
+  &.hide {
+    transition: opacity 0.3s ease;
+    transition-delay: 0.3s;
+    pointer-events: none;
   }
 }
