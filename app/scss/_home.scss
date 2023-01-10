@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 200;
 }
 
 .back-left {
@@ -59,6 +59,7 @@
     }
   }
 }
+
 .wardrobe {
   width: 46.3542vw;
   height: 53.8542vw;
@@ -66,9 +67,11 @@
   bottom: 1.2500vw;
   left: -5.2083vw;
   z-index: 1;
+
   .img {
     width: 100%;
     height: 100%;
+
     img {
       width: 100%;
       height: 100%;
@@ -97,6 +100,7 @@
     }
   }
 }
+
 .mirror {
   position: absolute;
   z-index: 2;
@@ -104,11 +108,13 @@
   height: 13.0208vw;
   top: 6.6667vw;
   right: 1.7188vw;
+
   > img {
     width: 100%;
     height: 100%;
   }
 }
+
 .mirror-imgs {
   position: absolute;
   top: 2.0833vw;
@@ -118,6 +124,7 @@
   mask-image: url("../img/mask-mirror.png");
   mask-size: 100% 100%;
   mask-position: left top;
+
   .img {
     width: 100%;
     height: 100%;
@@ -126,24 +133,29 @@
     top: 0;
     left: 0;
     transition: opacity 0.3s ease;
+
     img {
       width: 100%;
       height: 100%;
     }
+
     &.act {
       opacity: 1;
     }
   }
 }
+
 .chair-left {
   width: 37.8646vw;
   height: 31.5104vw;
   bottom: 2.0833vw;
   left: -4.9479vw;
   position: absolute;
+
   .img {
     width: 100%;
     height: 100%;
+
     img {
       width: 100%;
       height: 100%;
@@ -157,15 +169,18 @@
   bottom: 1.5625vw;
   right: -4.3229vw;
   position: absolute;
+
   .img {
     width: 100%;
     height: 100%;
+
     img {
       width: 100%;
       height: 100%;
     }
   }
 }
+
 .title-right {
   position: absolute;
   z-index: 2;
@@ -175,6 +190,7 @@
   flex-direction: column;
   top: 7.5000vw;
   right: 7.2917vw;
+
   span {
     font-weight: 500;
     font-size: 1.3021vw;
@@ -185,6 +201,7 @@
     text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 
   }
+
   p {
     font-weight: bold;
     font-size: 2.6042vw;
@@ -197,6 +214,7 @@
 
   }
 }
+
 .plates-center {
   z-index: 2;
   position: absolute;
@@ -205,10 +223,12 @@
   left: 0;
   bottom: 0;
   right: 0;
+
   ol {
     display: flex;
     width: 100%;
     counter-reset: my-awesome-counter2;
+
     li {
       right: 0;
       width: 100%;
@@ -219,9 +239,11 @@
       justify-content: flex-start;
       counter-increment: my-awesome-counter2;
       cursor: pointer;
+
       p, span {
         transition: color 0.3s ease;
       }
+
       &:hover {
         p, span {
           color: $pink;
@@ -229,6 +251,7 @@
 
         }
       }
+
       &::before {
         content: counter(my-awesome-counter2);
         font-weight: 900;
@@ -241,6 +264,7 @@
         position: absolute;
 
       }
+
       p {
         font-weight: 900;
         font-size: 1.3021vw;
@@ -250,6 +274,7 @@
         color: #fff;
         text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
       }
+
       span {
         font-weight: normal;
         font-size: 1.3021vw;
@@ -260,41 +285,51 @@
         text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 
       }
+
       &:nth-child(1) {
         //top: 9.1104vw;
         bottom: 37.28vw;
         padding-right: 9.5271vw;
+
         &:before {
           right: 5.7813vw;
           top: 0.3646vw;
         }
       }
+
       &:nth-child(2) {
         //top: 15.1763vw;
         bottom: 31.19vw;
         padding-left: 10.6771vw;
+
         &::before {
           left: 6.2500vw;
           top: 0.2083vw;
         }
+
         span {
           letter-spacing: 0.02em;
         }
       }
+
       &:nth-child(3) {
         //top: 20.5929vw;
         bottom: 25.78vw;
         padding-right: 17.1213vw;
+
         &::before {
           top: 0.2083vw;
           right: 13.2813vw;
         }
+
         span {
           letter-spacing: 0.02em;
         }
       }
+
       &:nth-child(even) {
         align-items: flex-end;
+
         p, span {
           text-align: left;
         }
@@ -303,8 +338,10 @@
 
   }
 }
+
 .part-back {
   transition: opacity 0.3s linear;
+
   &.hide {
     opacity: 0;
     pointer-events: none;
@@ -312,8 +349,10 @@
 
   }
 }
+
 .backblock {
   transition: opacity 0.3s ease;
+
   &.hide {
     transition: opacity 0.3s ease;
     opacity: 0;
@@ -335,9 +374,10 @@
   position: absolute;
   left: 6.3021vw;
   top: 8.3333vw;
+
   .button-opener {
     margin-top: 0.7813vw;
-    margin-left: 1.4063vw;
+    margin-left: 1.393vw;
 
     &::before {
       width: 3.2292vw;
@@ -357,10 +397,12 @@
     position: relative;
     transform: rotate(9deg);
     transition: transform 0.2s ease-out;
+
     > img {
       width: 100%;
       height: 100%;
     }
+
     .pic {
       position: absolute;
       //top: 3.2813vw;
@@ -373,12 +415,14 @@
       right: 9%;
       width: 30%;
       height: 68%;
+
       img {
         width: 100%;
         height: 100%;
       }
     }
   }
+
   &:hover {
     .img {
       transition: transform 0.2s ease-out;
@@ -386,12 +430,14 @@
     }
   }
 }
+
 .button-opener {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   position: relative;
+
   p {
     font-weight: 900;
     font-size: 1.3021vw;
@@ -399,6 +445,7 @@
     text-align: center;
     color: #2e82c4;
   }
+
   span {
     font-weight: normal;
     font-size: 1.3021vw;
@@ -415,12 +462,14 @@
 
   }
 }
+
 .btn-circle {
   width: 2.6042vw;
   height: 2.6042vw;
   border-radius: 50%;
   background: linear-gradient(51deg, #2e82c4 0%, #1b4d96 100%);
   position: relative;
+
   &::after {
     width: 1.8750vw;
     height: 1.8750vw;
@@ -433,6 +482,7 @@
     z-index: 2;
     background: url("../img/arr-l.png") no-repeat center / 100%;
   }
+
   &::before {
     top: 2px;
     left: 2px;
@@ -448,6 +498,7 @@
     transition: transform 0.2s linear, background-color 0.2s linear;
   }
 }
+
 .btn-main {
   &:hover {
     .btn-circle {
@@ -459,6 +510,7 @@
     }
   }
 }
+
 .menu-btn {
   &:hover {
 
@@ -469,6 +521,7 @@
         transition: transform 0.2s linear, background-color 0.2s linear;
       }
     }
+
     .btn {
       .txt {
         max-width: 270px;
@@ -479,6 +532,7 @@
     }
   }
 }
+
 .btn {
   .txt {
     display: flex;
@@ -490,6 +544,7 @@
     top: -0.2604vw;
     bottom: -0.2604vw;
     padding: 0.2604vw 0.8854vw 0.2604vw 3.2292vw;
+
     &::before {
       position: absolute;
       z-index: -1;
@@ -525,24 +580,29 @@
   left: 29.0104vw;
   width: 42.0313vw;
   height: 24.5313vw;
+
   .img {
     position: relative;
     width: 100%;
     height: 100%;
     transition: transform 0.2s ease-out;
+
     img {
       width: 100%;
       height: 100%;
     }
   }
+
   .button-opener {
     .btn {
       top: 3.4375vw;
-      left: 43%;
+      left: 44%;
     }
+
     p {
       margin-right: -3px;
     }
+
     span {
       letter-spacing: 0.005em;
     }
@@ -557,15 +617,159 @@
       left: -5.5292vw;
       top: 1.5104vw;
     }
+
     position: absolute;
     top: -1.1458vw;
-    left: 14.195vw;
+    left: 14.25vw;
   }
+
   &:hover {
     .img {
       transition: transform 0.2s ease-out;
 
       transform: translate(0, -2.5%) scale(1.07) rotate(8deg);
+    }
+  }
+}
+
+.pool-button {
+  position: absolute;
+  top: 9.6354vw;
+  right: 8.7500vw;
+  width: 24.6875vw;
+  height: 13.4375vw;
+
+  .img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s ease;
+    transform: rotate(-9deg);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .button-opener {
+    top: calc(100% + 2.3958vw);
+    position: absolute;
+    left: 5.6250vw;
+    .btn {
+      top: 3.3854vw;
+      left: 40.5%;
+    }
+    span {
+      margin-top: -3px;
+      margin-left: -4px;
+    }
+    &::before {
+      width: 2.4479vw;
+      height: 6.0938vw;
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: -5.2604vw;
+      right: -2.8646vw;
+      transform: rotate(-21deg);
+      background: url("../img/pool-arrow.png") no-repeat center / 100%;
+    }
+  }
+  &:hover {
+    .img {
+      transition: transform 0.2s ease;
+
+      transform: rotate(0) scale(1.146);
+    }
+  }
+}
+
+.logo {
+  position: fixed;
+  z-index: 120;
+  width: 6.0417vw;
+  height: 11.1458vw;
+  top: -1.2500vw;
+  right: 7.3438vw;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.big-menu {
+  .title {
+
+    position: fixed;
+    top: 1.5625vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-weight: 500;
+    font-size: 4.1667vw ;
+    letter-spacing: -0.01em;
+    line-height: 7.2917vw;
+    text-align: right;
+    color: #3382c4;
+    white-space: nowrap;
+
+  }
+}
+
+.sun {
+  position: fixed;
+  top: 8.6458vw;
+  left:  34.3229vw;
+  width: 10.2604vw;
+  height: 10.2604vw;
+
+  &::after {
+    width: 0.7292vw;
+    height: 2.3958vw;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 2.2396vw;
+    left: 11.6667vw;
+    transform: rotate(-116deg);
+    background: url("../img/sun-arrow.png") no-repeat center / 100%;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-out;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .txt {
+    position: absolute;
+    top: 1.4583vw;
+    left: 13.6458vw;
+    transform: translate(-50%, -50%);
+
+    p {
+      font-family: $second-font;
+      font-weight: normal;
+      font-size: 1.7708vw;
+      line-height: 1.3542vw;
+      text-align: right;
+      color: #707070;
+      transition: font-size 0.3s ease-out;
+    }
+  }
+  &:hover {
+    .img {
+      transition: transform 0.3s ease-out;
+      transform: rotate(55deg);
+    }
+    .txt {
+      p {
+        font-size: 2.5000vw;
+        line-height: 1.9271vw;
+        transition: font-size 0.3s ease-out;
+
+      }
     }
   }
 }
