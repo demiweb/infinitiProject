@@ -333,29 +333,56 @@
 
 .dance-button {
   position: absolute;
-  left: 121px;
-  top: 160px;
+  left: 6.3021vw;
+  top: 8.3333vw;
+  .button-opener {
+    margin-top: 0.7813vw;
+    margin-left: 1.4063vw;
+
+    &::before {
+      width: 3.2292vw;
+      height: 5.8333vw;
+      position: absolute;
+      display: inline-block;
+      content: '';
+      background: url("../img/dance-arrow.png") no-repeat center / 100%;
+      left: 0.8854vw;
+      top: -5.2083vw;
+    }
+  }
 
   .img {
-    width: 511px;
-    height: 414px;
+    width: 26.6146vw;
+    height: 21.5625vw;
     position: relative;
     transform: rotate(9deg);
+    transition: transform 0.2s ease-out;
     > img {
       width: 100%;
       height: 100%;
     }
     .pic {
       position: absolute;
-      top: 63px;
-      right: 46px;
-      width: 152px;
-      height: 282px;
+      //top: 3.2813vw;
+      //right: 2.3958vw;
+      //width: 7.9167vw;
+      //height: 14.6875vw;
       //transform: rotate(9deg);
+
+      top: 15.4%;
+      right: 9%;
+      width: 30%;
+      height: 68%;
       img {
         width: 100%;
         height: 100%;
       }
+    }
+  }
+  &:hover {
+    .img {
+      transition: transform 0.2s ease-out;
+      transform: rotate(0deg) scale(1.125);
     }
   }
 }
@@ -367,34 +394,36 @@
   position: relative;
   p {
     font-weight: 900;
-    font-size: 25px;
-    line-height: 29px;
+    font-size: 1.3021vw;
+    line-height: 1.5104vw;
     text-align: center;
     color: #2e82c4;
   }
   span {
     font-weight: normal;
-    font-size: 25px;
-    line-height: 29px;
+    font-size: 1.3021vw;
+    line-height: 1.5104vw;
     text-align: center;
     color: #707070;
 
   }
+
   .btn {
     position: absolute;
-    top: 10px;
-    left: 50%;
+    top: 3.5938vw;
+    left: 45%;
+
   }
 }
 .btn-circle {
-  width: 50px;
-  height: 50px;
+  width: 2.6042vw;
+  height: 2.6042vw;
   border-radius: 50%;
   background: linear-gradient(51deg, #2e82c4 0%, #1b4d96 100%);
   position: relative;
   &::after {
-    width: 36px;
-    height: 36px;
+    width: 1.8750vw;
+    height: 1.8750vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -405,10 +434,10 @@
     background: url("../img/arr-l.png") no-repeat center / 100%;
   }
   &::before {
-    top: 4px;
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
     border-radius: 50%;
     display: inline-block;
     content: '';
@@ -432,6 +461,7 @@
 }
 .menu-btn {
   &:hover {
+
     .btn-circle {
       &::before {
         background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
@@ -456,10 +486,10 @@
     justify-content: center;
 
     position: absolute;
-    left: -5px;
-    top: -5px;
-    bottom: -5px;
-    padding: 5px 17px 5px 62px;
+    left: -0.2604vw;
+    top: -0.2604vw;
+    bottom: -0.2604vw;
+    padding: 0.2604vw 0.8854vw 0.2604vw 3.2292vw;
     &::before {
       position: absolute;
       z-index: -1;
@@ -474,17 +504,68 @@
     }
 
     font-weight: normal;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 1.0417vw;
+    line-height: 1.2500vw;
     letter-spacing: -0.01em;
     text-align: left;
     color: #cce6f8;
     white-space: nowrap;
 
     overflow: hidden;
-    border-radius: 50px;
+    border-radius: 2.6042vw;
     opacity: 0;
     transition: max-width 0.3s ease-out, opacity 0.3s ease-out;
 
+  }
+}
+
+.picnic-button {
+  position: absolute;
+  bottom: 3.9063vw;
+  left: 29.0104vw;
+  width: 42.0313vw;
+  height: 24.5313vw;
+  .img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s ease-out;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .button-opener {
+    .btn {
+      top: 3.4375vw;
+      left: 43%;
+    }
+    p {
+      margin-right: -3px;
+    }
+    span {
+      letter-spacing: 0.005em;
+    }
+
+    &:before {
+      width: 4.7917vw;
+      height: 8.6979vw;
+      display: inline-block;
+      content: '';
+      position: absolute;
+      background: url("../img/picnic-arrow.png") no-repeat center / 100%;
+      left: -5.5292vw;
+      top: 1.5104vw;
+    }
+    position: absolute;
+    top: -1.1458vw;
+    left: 14.195vw;
+  }
+  &:hover {
+    .img {
+      transition: transform 0.2s ease-out;
+
+      transform: translate(0, -2.5%) scale(1.07) rotate(8deg);
+    }
   }
 }
