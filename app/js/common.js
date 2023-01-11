@@ -55,4 +55,25 @@ function allLozadImg() {
 allLozadImg();
 
 
+//btn-drop interact
+
+let dropBtn = [...document.querySelectorAll('.drop-btn')];
+
+function interactDropBtn() {
+    if (dropBtn.length) {
+        dropBtn.forEach((btn) => {
+            let btn2 = btn.querySelector('.btn-drop');
+
+            btn2.addEventListener('click', () => {
+                btn.classList.toggle('open');
+            })
+        })
+    }
+}
+
+interactDropBtn();
+
+//btn-drop interact
+
+
 
