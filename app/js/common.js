@@ -1,4 +1,38 @@
+
+//menu controls
+let menuBtn = [...document.querySelectorAll('.menu-btn')];
+let bigMenu = document.querySelector('.big-menu');
+
+function menuControl() {
+    if (menuBtn.length) {
+        menuBtn.forEach((btn, k) => {
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('.is-active')) {
+
+                } else {
+                    menuBtn.forEach((btn2, l) => {
+                        if (l === k) {
+
+                        } else {
+                            btn2.classList.remove('is-active');
+                            btn2.classList.add('is-hidden');
+                        }
+                    });
+                    document.body.dataset.active = k;
+                    btn.classList.add('is-active');
+                    bigMenu.classList.add('has-active');
+                }
+            })
+        })
+    }
+}
+menuControl();
+
+//menu controls
+
 //hover stands
+
+
 
 let shelfs = [...document.querySelectorAll('.plates-center ol li')];
 let mirrors = [...document.querySelectorAll('.mirror .img')];
@@ -74,6 +108,40 @@ function interactDropBtn() {
 interactDropBtn();
 
 //btn-drop interact
+
+//modal-window
+
+let sun = [...document.querySelectorAll('.sun')];
+let modal = document.querySelector('.modal-window');
+
+function modalControl() {
+    if (sun.length) {
+        sun.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.modal-window').classList.add('visible');
+            });
+            modal.addEventListener('click', () => {
+                modal.classList.remove('visible');
+            });
+
+            modal.querySelector('.close').addEventListener('click', () => {
+                modal.classList.remove('visible');
+            });
+            modal.querySelector('.modal-container').addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            })
+        })
+
+    }
+}
+
+modalControl();
+
+//modal-window
+
+
+
 
 
 
