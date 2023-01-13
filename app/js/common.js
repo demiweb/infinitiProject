@@ -2,6 +2,7 @@
 //menu controls
 let menuBtn = [...document.querySelectorAll('.menu-btn')];
 let bigMenu = document.querySelector('.big-menu');
+let globalClose = document.querySelector('.global-close');
 
 function menuControl() {
     if (menuBtn.length) {
@@ -26,10 +27,12 @@ function menuControl() {
                 }
             })
         });
-        bigMenu.addEventListener('click', () => {
+        globalClose.addEventListener('click', () => {
           menuBtn.forEach((bt) => {
               bt.classList.remove('is-active');
               bt.classList.remove('is-hidden');
+              document.body.dataset.active = false;
+              bigMenu.classList.remove('has-active');
           })
         })
     }
