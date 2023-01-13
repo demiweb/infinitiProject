@@ -439,6 +439,49 @@
       transform: rotate(0deg) scale(1.125);
     }
   }
+  .dance-cocktails {
+    opacity: 0;
+    top: calc(100% + 26px);
+    left: 265px;
+    width: 401px;
+    height: 102px;
+    position: absolute;
+    transition: top 0.3s ease-out, right 0.3s ease-out, bottom 0.3s ease-out, left 0.3s ease-out;
+    transition-delay: 0s !important;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .dance-music {
+    opacity: 0;
+    position: absolute;
+    top: -10px;
+    width: 171px;
+    right: -495px;
+    height: 370px;
+    transition: top 0.3s ease-out, right 0.3s ease-out, bottom 0.3s ease-out, left 0.3s ease-out;
+    transition-delay: 0s !important;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .dance-roller {
+    opacity: 0;
+    top: calc(100% + 26px);
+    left: 265px;
+    width: 139px;
+    height: 143px;
+    position: absolute;
+    transition: top 0.3s ease-out, right 0.3s ease-out, bottom 0.3s ease-out, left 0.3s ease-out;
+    transition-delay: 0s !important;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 .button-opener {
@@ -522,7 +565,7 @@
 }
 
 .menu-btn {
-  transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out, top 0.4s ease-out, left 0.4s ease-out, right 0.4s ease-out;
   &.is-active {
 
   }
@@ -1544,6 +1587,13 @@
 }
 
 .dance-button {
+  .img {
+    .pic {
+      z-index: 2;
+    }
+  }
+}
+.dance-button {
   &.is-active {
     z-index: 2;
     pointer-events: none;
@@ -1555,6 +1605,27 @@
       width: 1359px;
       height: 1101px;
       transform: rotate(0);
+    }
+    .dance-music {
+      opacity: 1;
+      top: 479px;
+      right: 75px;
+      transition: top 0.3s ease-out, right 0.3s ease-out, opacity 0.2s ease;
+      transition-delay: 0.4s !important;
+    }
+    .dance-roller {
+      opacity: 1;
+      top: 635px;
+      left: 715px;
+      transition: top 0.3s ease-out, right 0.3s ease-out, bottom 0.3s ease-out, left 0.3s ease-out, opacity 0.2s ease;
+      transition-delay: 0.3s !important;
+    }
+    .dance-cocktails {
+      opacity: 1;
+      top: 456px;
+      left: 345px;
+      transition: top 0.3s ease-out, right 0.3s ease-out, bottom 0.3s ease-out, left 0.3s ease-out, opacity 0.2s ease;
+      transition-delay: 0.3s !important;
     }
   }
 }

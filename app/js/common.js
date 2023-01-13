@@ -6,7 +6,9 @@ let bigMenu = document.querySelector('.big-menu');
 function menuControl() {
     if (menuBtn.length) {
         menuBtn.forEach((btn, k) => {
-            btn.addEventListener('click', () => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.preventDefault();
                 if (btn.classList.contains('.is-active')) {
 
                 } else {
@@ -23,6 +25,12 @@ function menuControl() {
                     bigMenu.classList.add('has-active');
                 }
             })
+        });
+        bigMenu.addEventListener('click', () => {
+          menuBtn.forEach((bt) => {
+              bt.classList.remove('is-active');
+              bt.classList.remove('is-hidden');
+          })
         })
     }
 }
