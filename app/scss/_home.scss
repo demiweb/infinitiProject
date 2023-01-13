@@ -718,6 +718,7 @@
   right: 8.7500vw;
   width: 24.6875vw;
   height: 13.4375vw;
+  transition: transform 0.2s ease-out, top 0.4s ease-out, left 0.4s ease-out, right 0.4s ease-out, bottom 0.4s ease-out;
 
   .img {
     width: 100%;
@@ -1702,6 +1703,7 @@
       &::before {
         font-family: $second-font;
         content: counter(my-awesome-counter2) '.';
+        padding-left: 0.5vw;
 
 
       }
@@ -1766,24 +1768,30 @@
 }
 
 .picnic-button {
-  width: 1552px;
-  height: 905px;
-  left: 169px;
-  bottom: 54px;
-  transition: transform 0.2s ease-out, top 0.4s ease-out, left 0.4s ease-out, right 0.4s ease-out, bottom 0.4s ease-out;
+
+  transition: transform 0.2s ease-out, top 0.4s ease-out, left 0.4s ease-out, right 0.4s ease-out, bottom 0.4s ease-out, width 0.4s ease-out, height 0.4s ease-out;
 
   .textuals {
     top: 66px;
     left: 23px;
     max-width: 382px;
+    span {
+      margin-top: 0.8021vw;
+    }
+    ol {
+      margin-bottom: 0.6vw;
+    }
 
   }
   &.is-active {
-
+    width: 1552px;
+    height: 905px;
+    left: 169px;
+    bottom: 54px;
     > .img {
 
       transform: scale(1) !important;
-      transition: transform 0.2s ease-out, top 0.4s ease-out, left 0.4s ease-out, right 0.4s ease-out, bottom 0.4s ease-out;
+      transition: transform 0.2s ease-out, top 0.4s ease-out, left 0.4s ease-out, right 0.4s ease-out, bottom 0.4s ease-out, width 0.4s ease-out, height 0.4s ease-out;
 
     }
   }
@@ -1864,8 +1872,8 @@ body {
       left: 63.1329vw;
       &:after {
 
-        top: 3.79996vw;
-        left: -1.7933vw;
+        top: 3.89996vw;
+        left: -1.8733vw;
 
         transform: rotate(-413deg) rotateX(180deg);
       }
@@ -1879,6 +1887,27 @@ body {
       left: 34.7313vw;
     }
   }
+  &[data-active='2'] {
+    .sun {
+      top: 1.0258vw;
+      left: 57.439vw;
+      &:after {
+
+        top: 3.89996vw;
+        left: -1.8733vw;
+
+        transform: rotate(-413deg) rotateX(180deg);
+      }
+      .txt {
+        top: 2.7483vw;
+        left: -3.0972vw;
+      }
+    }
+    .video-block {
+      top: -0.3667vw;
+      left: 13.2613vw;
+    }
+  }
 }
 
 .video-block {
@@ -1889,7 +1918,7 @@ body {
   position: fixed;
   background: url("../img/tv.png") no-repeat center / 100%;
   z-index: 1;
-  transition: top 0.3s ease-out, letter-spacing 0.3s ease-out;
+  transition: top 0.3s ease-out, left 0.3s ease-out, letter-spacing 0.3s ease-out;
   .img {
     width: 18.5417vw;
     height: 10.4688vw;
@@ -1947,6 +1976,367 @@ body {
 
 
       }
+    }
+  }
+}
+
+.menu-btn {
+  &.is-active {
+    z-index: 2;
+    pointer-events: none;
+    .textuals {
+      pointer-events: auto;
+    }
+  }
+}
+.pool-button {
+  transition: transform 0.2s ease-out, top 0.4s ease-out, left 0.4s ease-out, right 0.4s ease-out, bottom 0.4s ease-out, width 0.4s ease-out, height 0.4s ease-out;
+
+  .textuals {
+    max-width: 405px;
+    top: 236px;
+    right: 312px;
+    span {
+      margin-top: 0.9021vw;
+    }
+  }
+  .chair1 {
+    position: absolute;
+    opacity: 0;
+    bottom: -150px;
+    left: -819px;
+    width: 311px;
+    height: 289px;
+    z-index: 2;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+  }
+  .chair2 {
+    position: absolute;
+    opacity: 0;
+    bottom: -650px;
+    left: -180px;
+    width: 229px;
+    height: 325px;
+    z-index: 3;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+  }
+  .chair3 {
+    position: absolute;
+    opacity: 0;
+    bottom: -700px;
+    right: 60px;
+    width: 241px;
+    height: 327px;
+    z-index: 3;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+  }
+  .chair4 {
+    position: absolute;
+    opacity: 0;
+    bottom: -350px;
+    right: -650px;
+    width: 330px;
+    height: 306px;
+    z-index: 3;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+  }
+  .pine {
+    position: absolute;
+    opacity: 0;
+    bottom: 350px;
+    left: -480px;
+    width: 77px;
+    height: 168px;
+    z-index: 1;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+  }
+  .yellow {
+    position: absolute;
+    opacity: 0;
+    top: -160px;
+    left: -160px;
+    width: 105px;
+    height: 87px;
+    z-index: 3;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+
+  }
+  .ball {
+    position: absolute;
+    opacity: 0;
+    bottom: 400px;
+    left: -320px;
+    width: 77px;
+    height: 97px;
+    z-index: 3;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+
+  }
+  .delphine {
+    position: absolute;
+    opacity: 0;
+    top: -260px;
+    right: 20px;
+    width: 143px;
+    height: 93px;
+    z-index: 3;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+
+  }
+  &.is-active {
+    top: -22px;
+    right: 38px;
+    width: 1697px;
+    height: 926px;
+    .chair1 {
+      opacity: 1;
+      bottom: 41px;
+      left: 44px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+    .chair2 {
+      opacity: 1;
+      bottom: -30px;
+      left: 296px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+    .chair3 {
+      opacity: 1;
+      bottom: -8px;
+      right: 440px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+    .chair4 {
+      opacity: 1;
+      bottom: 24px;
+      right: 160px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+    .pine {
+      opacity: 1;
+      bottom: 211px;
+      left: 145px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+    .yellow {
+      opacity: 1;
+      top: 513px;
+      left: 392px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+    .ball {
+      opacity: 1;
+      bottom: 268px;
+      left: 525px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+
+    .delphine {
+      opacity: 1;
+      top: 510px;
+      right: 502px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+
+    > .img {
+      transform: rotate(0) !important;
+    }
+  }
+}
+
+.picnic-button {
+  .picnic-croa {
+    position: absolute;
+    opacity: 0;
+    bottom: -257px;
+    left: -482px;
+    width: 276px;
+    height: 205px;
+    z-index: 2;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+  }
+  .picnic-bbq {
+    position: absolute;
+    opacity: 0;
+    top: -224px;
+    left: 190px;
+    width: 202px;
+    height: 260px;
+    z-index: -1;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+  }
+  .picnic-baloon1 {
+    position: absolute;
+    opacity: 0;
+    top: -263px;
+    right: 698px;
+    width: 160px;
+    height: 299px;
+    z-index: 2;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+  }
+  .picnic-baloon2 {
+    position: absolute;
+    opacity: 0;
+    top: -10px;
+    right: -400px;
+    width: 159px;
+    height: 300px;
+    z-index: 2;
+
+    transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+    transition-delay: 0s !important;
+
+  }
+  &.is-active {
+    .picnic-croa {
+      opacity: 1;
+      bottom: 284px;
+      left: 480px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+    .picnic-bbq {
+      opacity: 1;
+      top: 262px;
+      left: 740px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+    .picnic-baloon1 {
+      opacity: 1;
+      top:195px;
+      right: 462px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+    .picnic-baloon2 {
+      opacity: 1;
+      top:164px;
+      right: 208px;
+      transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
+      transition-delay: 0.3s !important;
+    }
+  }
+}
+
+
+.section-control {
+  z-index: 130;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  &.vis {
+    opacity: 1;
+    .btn-sld {
+      pointer-events: auto;
+    }
+  }
+}
+
+.btn-sld {
+  cursor: pointer;
+  pointer-events: none;
+
+  position: fixed;
+  width: 2.6042vw;
+  height: 2.6042vw;
+  border-radius: 50%;
+  z-index: 130;
+  transition: opacity 0.3s ease;
+
+  background: linear-gradient(303deg, #2e82c4 0%, #1b4d96 100%);
+
+  &::before {
+    z-index: 1;
+    transition: transform 0.2s ease, background 0.2s ease;
+    top: 2px;
+    right: 2px;
+    left: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    transform: rotate(0deg);
+
+    background: linear-gradient(180deg, #72ffe7 0%, #fff 100%);
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.8750vw;
+    height: 1.8750vw;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &:hover {
+    &::before {
+      transform: rotate(360deg);
+      transition: transform 0.2s ease, background 0.2s ease;
+
+      background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
+
+    }
+  }
+  &.sld--prev {
+    top: 450px;
+    left: 140px;
+  }
+  &.sld--next {
+    top: 450px;
+    right: 141px;
+    > img {
+      transform: translate(-50%, -50%) rotate(180deg);
     }
   }
 }

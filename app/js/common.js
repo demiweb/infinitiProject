@@ -1,8 +1,11 @@
 
 //menu controls
 let menuBtn = [...document.querySelectorAll('.menu-btn')];
+let btnSlds = [...document.querySelectorAll('.btn-sld')];
 let bigMenu = document.querySelector('.big-menu');
 let globalClose = document.querySelector('.global-close');
+let controlSec = document.querySelector('.section-control');
+let activeSlide = false;
 
 function menuControl() {
     if (menuBtn.length) {
@@ -22,8 +25,43 @@ function menuControl() {
                         }
                     });
                     document.body.dataset.active = k;
+                    activeSlide = k;
                     btn.classList.add('is-active');
                     bigMenu.classList.add('has-active');
+                    controlSec.classList.add('vis');
+                }
+            })
+        });
+        btnSlds.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('sld--prev')) {
+                    activeSlide -= 1;
+                    if (activeSlide <= -1) {
+                        activeSlide = 2;
+
+                    }
+                    menuBtn.forEach((bt, k) => {
+                        bt.classList.remove('is-active');
+                        bt.classList.remove('is-hidden');
+                        if (k !== activeSlide) {
+                            bt.classList.add('is-hidden');
+                        }
+                    });
+                    menuBtn[activeSlide].classList.add('is-active');
+                } else {
+                    activeSlide += 1;
+                    if (activeSlide >= 3) {
+                        activeSlide = 0;
+
+                    }
+                    menuBtn.forEach((bt, k) => {
+                        bt.classList.remove('is-active');
+                        bt.classList.remove('is-hidden');
+                        if (k !== activeSlide) {
+                            bt.classList.add('is-hidden');
+                        }
+                    });
+                    menuBtn[activeSlide].classList.add('is-active');
                 }
             })
         });
@@ -32,7 +70,9 @@ function menuControl() {
               bt.classList.remove('is-active');
               bt.classList.remove('is-hidden');
               document.body.dataset.active = false;
+              activeSlide = false;
               bigMenu.classList.remove('has-active');
+              controlSec.classList.remove('vis');
           })
         })
     }
