@@ -85,8 +85,8 @@ menuControl();
 
 
 
-let shelfs = [...document.querySelectorAll('.plates-center ol li')];
-let mirrors = [...document.querySelectorAll('.mirror .img')];
+let shelfs = [...document.querySelectorAll('.back-center .plates-center ol li')];
+let mirrors = [...document.querySelectorAll('.back-left .mirror .img')];
 
 let partsComp = [...document.querySelectorAll('.part-back')];
 function shelfInteract() {
@@ -158,7 +158,29 @@ function interactDropBtn() {
 
 interactDropBtn();
 
+
+
 //btn-drop interact
+
+//mobile anim
+
+let mobileShelf = [...document.querySelectorAll('.back-mobile .plates-center li')];
+
+function cotrolMobileShelf() {
+    if (mobileShelf.length) {
+        mobileShelf.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.backblock').classList.add('stepping');
+
+                setTimeout(() => {
+                    document.querySelector('.backblock').classList.add('hide');
+                }, 2000);
+            })
+        })
+    }
+}
+cotrolMobileShelf();
+//mobile anim
 
 //modal-window
 

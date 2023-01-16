@@ -2344,6 +2344,277 @@ body {
   display: none;
 }
 @media screen and (max-width: 767px) {
+  .button-opener {
+    display: none;
+  }
+
+  .btn-opener-mob {
+    top: 0;
+    position: absolute;
+
+    .tp {
+      width: 220px;
+      height: 34px;
+      position: relative;
+      &::before {
+        z-index: -1;
+        opacity: 0.85;
+        display: inline-block;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+
+        background: linear-gradient(to right, #2e82c4 0%, #2e82c4 38.28%, #1b4d96 100%);
+
+      }
+
+      &::after {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -3.4px;
+        transform: translate(0, -50%) rotate(0);
+        border-radius: 50%;
+        background: linear-gradient(100deg, #2e82c4 0%, #1b4d96 100%);
+        z-index: 1;
+
+
+      }
+    }
+
+    .arr {
+      width: 33px;
+      height: 33px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 2;
+      transform: translate(0, -50%);
+      border-radius: 50%;
+      background: linear-gradient(-100deg, #2e82c4 0%, #1b4d96 100%);
+
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
+
+
+      &::before {
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border-radius: 50%;
+        display: inline-block;
+        content: '';
+        position: absolute;
+        z-index: 1;
+        background: linear-gradient(180deg, #72ffe7 0%, #fff 100%);
+        transform: rotate(0);
+        transition: transform 0.2s linear, background-color 0.2s linear;
+      }
+    }
+    &:hover {
+      .arr {
+        &::before {
+
+          background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
+          transform: rotate(360deg);
+          transition: transform 0.2s linear, background-color 0.2s linear;
+
+        }
+      }
+    }
+  }
+  .pool-button {
+    width: 293px;
+    height: 160px;
+    top: 150px;
+    right: 85px;
+    .img {
+      transform: rotate(-13deg);
+    }
+    &:hover {
+      .img {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+
+  .big-menu .title {
+    transform: translate(-50%, 0);
+    text-align: center;
+    white-space: initial;
+    letter-spacing: -0.005em;
+
+    font-size: 8.6111vw;
+    line-height: 1.02;
+    top: 26.9444vw;
+    left: 50%;
+    width: 80%;
+    max-width: 80%;
+
+  }
+  .logo {
+    width: 14.4444vw;
+    height: 26.9444vw;
+    top: -3.6111vw;
+    left: 5.0000vw;
+    right: auto;
+    border-radius: 4.4444vw;
+    overflow: hidden;
+  }
+
+  .back-mobile {
+    .mirror {
+      transition: transform 0.3s ease-out, top 0.3s ease-out, left 0.3s ease-out;
+    }
+    .title-right {
+      transition: transform 0.3s ease-out, top 0.3s ease-out, left 0.3s ease-out, right 0.3s ease-out;;
+
+    }
+    .wardrobe {
+      transition: transform 0.4s ease-out 1.3s, top 0.4s ease-out 1.3s, left 0.4s ease-out 1.3s, right 0.4s ease-out 1.3s;
+
+    }
+    .plates-center {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      top: auto;
+      right: auto;
+      transition: transform 0.4s ease-out 1.3s, top 0.4s ease-out 1.3s, left 0.4s ease-out 1.3s, right 0.4s ease-out 1.3s, bottom 0.4s ease-out 1.3s;
+
+    }
+  }
+  .backblock {
+    &.stepping {
+
+      .back-mobile {
+        .mirror {
+          top: 110vh;
+          left: 102.7778vw;
+          transform: rotate(170deg);
+          transition: transform 0.3s ease-out, top 0.4s ease-out, left 0.3s ease-out;
+
+        }
+        .title-right {
+          right: calc(-25.0000vw - 100%);
+          top: 152.7778vw;
+          transform: rotate(110deg);
+          transition: transform 0.4s ease-out 0.8s, top 0.4s ease-out 0.8s, left 0.4s ease-out 0.8s, right 0.4s ease-out 0.8s;
+          //transition-delay: 0.8s;
+        }
+        .wardrobe {
+          transform: rotate(-66deg);
+          left: -110%;
+          bottom: -125.0000vw;
+          transition: transform 0.4s ease-out 1.3s, top 0.4s ease-out 1.3s, left 0.4s ease-out 1.3s, right 0.4s ease-out 1.3s, bottom 0.4s ease-out 1.3s;
+
+        }
+        .plates-center {
+          transform: rotate(-66deg);
+          left: -110%;
+          bottom: -125.0000vw;
+          transition: transform 0.4s ease-out 1.3s, top 0.4s ease-out 1.3s, left 0.4s ease-out 1.3s, right 0.4s ease-out 1.3s, bottom 0.4s ease-out 1.3s;
+
+        }
+      }
+    }
+    &.hide {
+      opacity: 1;
+      transform: translate(0, 110%);
+      transition: transform 0.3s ease-out;
+    }
+  }
+
+  .plates-center ol li {
+    &::before {
+      font-size: 4.7222vw;
+      line-height: 5.5556vw;
+    }
+    p {
+      font-size: 3.8889vw;
+      line-height: 4.4444vw;
+      font-weight: 900;
+    }
+    span {
+      font-size: 3.8889vw;
+      line-height: 4.4444vw;
+      font-weight: normal;
+    }
+    &:nth-child(1) {
+      bottom: 83.8vw;
+      padding-right: 28.5271vw;
+      &::before {
+        right: 18.9813vw;
+        top: 2.3646vw;
+      }
+    }
+    &:nth-child(2) {
+      bottom: 67.5vw;
+      padding-left: 30.7771vw;
+      &::before {
+        left: 20.05vw;
+        top: 1.3583vw;
+      }
+    }
+    &:nth-child(3) {
+      bottom: 53vw;
+      padding-right: 49.4271vw;
+      &::before {
+        top: 1.7083vw;
+        right: 38.3813vw;
+      }
+    }
+  }
+  .mirror-imgs {
+    display: none;
+  }
+  .title-right {
+    top: 12.5000vw;
+    right: 5.2778vw;
+    p {
+      font-size: 6.1111vw;
+      line-height: 6.6667vw;
+      margin-bottom: 1.6667vw;
+    }
+    span {
+      font-size: 4.7222vw;
+      line-height: 5.5556vw;
+      letter-spacing: .023em;
+    }
+  }
+  .wardrobe {
+    width:122.2222vw;
+    height: 141.1111vw;
+    left: -11.1111vw;
+    right: auto;
+    bottom: -10.2778vw;
+    top: auto;
+  }
+  .mirror {
+    width: 42.2222vw;
+    height: 43.6111vw;
+    top: 20.8333vw;
+    left: -3px;
+    right: auto;
+    bottom: auto;
+  }
   .back-mobile {
     display: flex;
     position: fixed;

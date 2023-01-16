@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.076" height="24.076" viewBox="0 0 24.076 24.076">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.045" y1="0.71" x2="0.972" y2="0.318" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2e82c4"/>
+      <stop offset="1" stop-color="#1b4d96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.28" y1="0.653" x2="0.534" y2="1" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Group_110" data-name="Group 110" transform="translate(-4.682 -4.682)">
+    <path id="Subtraction_4" data-name="Subtraction 4" d="M12.038,24.076A12.038,12.038,0,0,1,3.526,3.526,12.038,12.038,0,1,1,20.55,20.55,11.959,11.959,0,0,1,12.038,24.076ZM13.474,5.313A1.661,1.661,0,0,0,12.3,5.8L7.221,10.812a1.673,1.673,0,0,0,0,2.379L12.3,18.207a1.672,1.672,0,0,0,2.35-2.379L10.775,12,14.65,8.175a1.672,1.672,0,0,0-1.175-2.862Z" transform="translate(4.682 4.682)" fill="url(#linear-gradient)"/>
+    <path id="Subtraction_1" data-name="Subtraction 1" d="M7.022,5.238h0L3.2,1.365A1.671,1.671,0,0,0,.831,1.35,1.682,1.682,0,0,0,.589,3.428L.579,3.416A2.007,2.007,0,0,1,2.006,0,1.992,1.992,0,0,1,3.434.6L7.022,4.23,10.611.6a2.006,2.006,0,1,1,2.855,2.82l-.009.009a1.684,1.684,0,0,0-.243-2.076,1.672,1.672,0,0,0-2.365.015L7.022,5.238Z" transform="translate(20.695 9.661) rotate(90)" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>
