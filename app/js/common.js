@@ -184,13 +184,15 @@ cotrolMobileShelf();
 
 //modal-window
 
-let sun = [...document.querySelectorAll('.sun')];
+let sun = [...document.querySelectorAll('.btn-sun')];
 let modal = document.querySelector('.modal-window');
 
 function modalControl() {
     if (sun.length) {
         sun.forEach((btn) => {
-            btn.addEventListener('click', () => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 document.querySelector('.modal-window').classList.add('visible');
             });
             modal.addEventListener('click', () => {
