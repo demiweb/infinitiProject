@@ -48,6 +48,7 @@ function menuControl() {
                         }
                     });
                     menuBtn[activeSlide].classList.add('is-active');
+                    document.body.dataset.active = activeSlide;
                 } else {
                     activeSlide += 1;
                     if (activeSlide >= 3) {
@@ -62,6 +63,7 @@ function menuControl() {
                         }
                     });
                     menuBtn[activeSlide].classList.add('is-active');
+                    document.body.dataset.active = activeSlide;
                 }
             })
         });

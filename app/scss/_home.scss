@@ -444,6 +444,7 @@
     }
   }
   .dance-cocktails {
+    pointer-events: none;
     opacity: 0;
     top: -4.8438vw;
     left: 0;
@@ -458,6 +459,7 @@
     }
   }
   .dance-music {
+    pointer-events: none;
     opacity: 0;
     position: absolute;
     top: -0.5208vw;
@@ -473,6 +475,7 @@
     }
   }
   .dance-roller {
+    pointer-events: none;
     opacity: 0;
     top: calc(100% + 1.3542vw);
     left: 13.8021vw;
@@ -487,6 +490,7 @@
     }
   }
   .dance-flamingo {
+    pointer-events: none;
     opacity: 0;
     top: 9.8438vw;
     left: -13.6458vw;
@@ -583,7 +587,7 @@
 }
 
 .menu-btn {
-  transition: opacity 0.3s ease-out, top 0.4s ease-out, left 0.4s ease-out, right 0.4s ease-out;
+  transition: opacity 0.3s ease-out, top 0.4s ease-out, left 0.4s ease-out, right 0.4s ease-out, bottom 0.4s ease-out;
   &.is-active {
 
   }
@@ -2001,6 +2005,7 @@ body {
     }
   }
   .chair1, .chair2, .chair3, .chair4 {
+    pointer-events: none;
     img {
       width: 100%;
       height: 100%;
@@ -2059,6 +2064,7 @@ body {
 
   }
   .pine {
+    pointer-events: none;
     position: absolute;
     opacity: 0;
     bottom: 18.2292vw;
@@ -2076,6 +2082,7 @@ body {
 
   }
   .yellow {
+    pointer-events: none;
     position: absolute;
     opacity: 0;
     top: -8.3333vw;
@@ -2093,6 +2100,7 @@ body {
 
   }
   .ball {
+    pointer-events: none;
     position: absolute;
     opacity: 0;
     bottom: 20.8333vw;
@@ -2110,6 +2118,7 @@ body {
     }
   }
   .delphine {
+    pointer-events: none;
     position: absolute;
     opacity: 0;
     top: -13.5417vw;
@@ -2197,6 +2206,7 @@ body {
 
 .picnic-button {
   .picnic-croa {
+    pointer-events: none;
     position: absolute;
     opacity: 0;
     bottom: -13.3854vw;
@@ -2210,6 +2220,7 @@ body {
 
   }
   .picnic-bbq {
+    pointer-events: none;
     position: absolute;
     opacity: 0;
     top: -11.6667vw;
@@ -2226,6 +2237,7 @@ body {
     }
   }
   .picnic-baloon1 {
+    pointer-events: none;
     position: absolute;
     opacity: 0;
     top: -13.6979vw;
@@ -2242,6 +2254,7 @@ body {
     }
   }
   .picnic-baloon2 {
+    pointer-events: none;
     position: absolute;
     opacity: 0;
     top: -0.5208vw;
@@ -2280,6 +2293,7 @@ body {
       transition-delay: 0.3s !important;
     }
     .picnic-baloon2 {
+
       opacity: 1;
       top:8.5417vw;
       right: 10.8333vw;
@@ -2379,13 +2393,249 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+
+
+  .pool-button {
+    .delphine {
+      width: 11.4479vw;
+      height: 7.1438vw;
+    }
+    .chair1 {
+      width: 96px;
+      height: 89px;
+    }
+    .chair2 {
+      width: 68px;
+      height: 96px;
+    }
+    .chair3 {
+      width: 74px;
+      height: 99px;
+    }
+    .chair4 {
+      width: 100px;
+      height: 92px;
+    }
+    .pine {
+      width: 24px;
+      height: 53px;
+    }
+    .yellow {
+      width: 31px;
+      height: 25px;
+    }
+    .ball {
+      width: 23px;
+      height: 29px;
+    }
+    &.is-active {
+      top: auto;
+      right: auto;
+      width: 391px;
+      height: 214px;
+      bottom: 98px;
+      left: -15px;
+      .delphine {
+        top: 34.1625vw;
+        right: 27.0758vw;
+
+      }
+      .pine {
+        bottom: 10.9896vw;
+        left: 8.1521vw;
+
+      }
+      .yellow {
+        top: 32.2188vw;
+        left: 32.4167vw;
+      }
+      .ball {
+        bottom: 13.583vw;
+        left: 25.3438vw;
+      }
+      .chair1 {
+        bottom: -6.9646vw;
+        left: 4.3917vw;
+      }
+      .chair2 {
+        bottom: -10.0625vw;
+        left: 26.4167vw;
+      }
+      .chair3 {
+        bottom: -11.24167vw;
+        right: 23.6167vw;
+        z-index: 2;
+      }
+      .chair4 {
+        bottom: -4.65vw;
+        right: 3.6333vw;
+        z-index: 1;
+      }
+    }
+  }
+  .checkbox {
+    width: 100%;
+    margin-top: 3.5125vw;
+    input {
+      margin: 0;
+    }
+    span {
+      padding-right: 13.3333vw;
+      font-size: 3.8889vw;
+      line-height: 4.7222vw;
+      &::before {
+        width: 4.4444vw;
+        height: 4.4444vw;
+        right: 4.4167vw;
+        top: 58%;
+      }
+
+    }
+  }
+  .checkbox input:checked+span::before {
+    background: url('../img/check.png') no-repeat 2px 4px/75%,#1b4d96;
+  }
+  .footer-btn {
+    width: 66.1111vw;
+    height: 10.8333vw;
+    margin-top: 5.0000vw;
+    margin-right: -1px;
+    .circle {
+      width: 13.8889vw;
+      height: 13.8889vw;
+      top: 57%;
+      left: -4.5396vw;
+      &::after {
+        width: 10.0000vw;
+        height: 10.0000vw;
+      }
+    }
+
+    button {
+      font-size: 5.5556vw;
+      line-height: 6.6667vw;
+      padding-right: 20.8333vw;
+      padding-bottom: 2px;
+      &::after {
+        width: 16.6667vw;
+        height: 16.6667vw;
+        top: 57%;
+        left: -5.8333vw;
+      }
+
+      &::before {
+        border-radius: 13.8889vw;
+      }
+    }
+  }
+  .modal-forms {
+    > p {
+      font-size: 6.6667vw;
+      line-height: 7.7778vw;
+      font-weight: bold;
+      max-width: 100%;
+      text-align: center;
+      padding-right: 0;
+    }
+  }
+  .form {
+    width: 100%;
+    margin-top: 13.75vh;
+    form {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+  .input-wrap {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 4.1667vw;
+    input {
+      width: 100%;
+      height: 10.8333vw  ;
+      border-radius: 5.5556vw;
+      padding: 2px 4.4444vw 3px;
+      font-size: 5.5556vw;
+      line-height: 6.6667vw;
+      &::placeholder {
+        font-size: 5.5556vw;
+        line-height: 6.6667vw;
+      }
+    }
+  }
+  .modal-window {
+    align-items: flex-start;
+    transition: transform 0.5s ease-out;
+    &.visible {
+      transition: transform 0.5s ease-out;
+    }
+
+  }
+  .modal-container {
+    width: 100%;
+    border-radius: 0px 0px 8.3333vw 8.3333vw;
+    box-shadow: 0px 3px 6px rgba(77, 63, 63, 0.78);
+    padding: 8.7vh 13.0556vw 16.5626vh;
+    height: auto;
+    .sun2 {
+      display: none;
+    }
+    .close {
+      top: calc(100% + 3.3333vw);
+      right: 5.0000vw;
+      left: auto;
+      width: 13.8889vw;
+      height:13.8889vw;
+
+      img {
+        width: 10.0000vw;
+        height: 10.0000vw;
+      }
+      &::before {
+        background: linear-gradient(180deg, #72ffe7 0%, #fff 100%);
+      }
+      &::after {
+        border-radius: 8.3333vw;
+        background: linear-gradient(204deg,#1b4d96 30%,#2e82c4 88.28%,#2e82c4 100%);
+        opacity: 0.85;
+        display: inline-block;
+        width: 16.6667vw;
+        height: 50.0000vw;
+        position: absolute;
+        content: '';
+        z-index: -1;
+        left: -1.3889vw;
+        bottom: -1.1111vw;
+      }
+      &:hover {
+        &::before {
+          background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
+        }
+      }
+    }
+  }
+  .modal-steps {
+    display: none;
+  }
+  .modal-content {
+    padding: 0;
+    > span {
+      display: none;
+    }
+  }
+  .modal-forms {
+    margin-bottom: 0;
+  }
+
+
   .mobile-top {
 
     top: 0;
     position: fixed;
     z-index: 120;
     right: 0;
-    padding-right: 28px;
+    padding-right: 7.7778vw;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -2396,8 +2646,8 @@ body {
     top: 4px;
     left: 4px;
     position: relative;
-    width: 50px;
-    height:50px;
+    width: 13.8889vw;
+    height:13.8889vw;
     border-radius: 50%;
 
     background: linear-gradient(303deg, #2e82c4 0%, #1b4d96 100%);
@@ -2422,22 +2672,22 @@ body {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 36px;
-      height: 36px;
+      width: 10.0000vw;
+      height: 10.0000vw;
       transform: translate(-50%, -50%) rotate(-45deg);
       z-index: 2;
     }
     &::after {
       z-index: -1;
       background: #000;
-      height: 180px;
-      width: 60px;
+      height: 50.0000vw;
+      width: 16.6667vw;
       display: inline-block;
       content: '';
       position: absolute;
       left: 50%;
-      bottom: -5px;
-      border-radius: 30px;
+      bottom: -1.3889vw;
+      border-radius: 8.3333vw;
       background: linear-gradient(30deg, #ff72ff 0%, #ff72ff 38.28%, #820782 100%);
       opacity: 0.85;
       transform: translate(-50%, 0);
@@ -2454,7 +2704,13 @@ body {
       }
     }
   }
-
+  .menu-btn {
+    &.is-active {
+      .btn-opener-mob {
+        opacity: 0;
+      }
+    }
+  }
   .bottom-foot {
     display: none;
   }
@@ -2470,6 +2726,7 @@ body {
     position: absolute;
     z-index: 2;
     display: flex;
+    transition: opacity 0.2s ease;
     span {
       position: absolute;
 
@@ -2584,7 +2841,8 @@ body {
   .pool-button {
     width: 81.3889vw;
     height: 44.4444vw;
-    top: 41.6667vw;
+    top: auto;
+    bottom: 91.68vw;
     right: 23.6111vw;
     .btn-opener-mob {
       top: 21.9444vw;
@@ -2863,5 +3121,14 @@ body {
   }
   .back-right {
     display: none;
+  }
+
+  @media screen and  (max-height: 630px){
+    .modal-container {
+      padding: 3.7vh 13.0556vw 6.5626vh;
+    }
+    .form {
+      margin-top: 4vh;
+    }
   }
 }
