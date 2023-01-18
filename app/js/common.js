@@ -25,6 +25,7 @@ function menuControl() {
                         }
                     });
                     document.body.dataset.active = k;
+                    document.body.classList.add('activate');
                     activeSlide = k;
                     btn.classList.add('is-active');
                     bigMenu.classList.add('has-active');
@@ -49,6 +50,7 @@ function menuControl() {
                     });
                     menuBtn[activeSlide].classList.add('is-active');
                     document.body.dataset.active = activeSlide;
+                    document.body.classList.add('activate');
                 } else {
                     activeSlide += 1;
                     if (activeSlide >= 3) {
@@ -64,6 +66,7 @@ function menuControl() {
                     });
                     menuBtn[activeSlide].classList.add('is-active');
                     document.body.dataset.active = activeSlide;
+                    document.body.classList.add('activate');
                 }
             })
         });
@@ -72,6 +75,7 @@ function menuControl() {
               bt.classList.remove('is-active');
               bt.classList.remove('is-hidden');
               document.body.dataset.active = false;
+              document.body.classList.remove('activate');
               activeSlide = false;
               bigMenu.classList.remove('has-active');
               controlSec.classList.remove('vis');
