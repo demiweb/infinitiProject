@@ -2,6 +2,7 @@
 //menu controls
 let menuBtn = [...document.querySelectorAll('.menu-btn')];
 let btnSlds = [...document.querySelectorAll('.btn-sld')];
+let btnDots = [...document.querySelectorAll('.single-dot')];
 let bigMenu = document.querySelector('.big-menu');
 let globalClose = document.querySelector('.global-close');
 let controlSec = document.querySelector('.section-control');
@@ -25,12 +26,33 @@ function menuControl() {
                         }
                     });
                     document.body.dataset.active = k;
+                    btnDots.forEach((dt) => {
+                        dt.classList.remove('active');
+                    });
+                    btnDots[k].classList.add('active');
                     document.body.classList.add('activate');
                     activeSlide = k;
                     btn.classList.add('is-active');
                     bigMenu.classList.add('has-active');
                     controlSec.classList.add('vis');
                 }
+            })
+        });
+        btnDots.forEach((dot, m) => {
+            dot.addEventListener('click', () => {
+                menuBtn.forEach((bt, k) => {
+                    bt.classList.remove('is-active');
+                    bt.classList.add('is-hidden');
+
+                });
+                activeSlide = m;
+                menuBtn[m].classList.add('is-active');
+                menuBtn[m].classList.remove('is-hidden');
+                document.body.dataset.active = activeSlide;
+                btnDots.forEach((dt) => {
+                    dt.classList.remove('active');
+                });
+                dot.classList.add('active');
             })
         });
         btnSlds.forEach((btn) => {
@@ -51,6 +73,10 @@ function menuControl() {
                     menuBtn[activeSlide].classList.add('is-active');
                     document.body.dataset.active = activeSlide;
                     document.body.classList.add('activate');
+                    btnDots.forEach((dt) => {
+                        dt.classList.remove('active');
+                    });
+                    btnDots[activeSlide].classList.add('active');
                 } else {
                     activeSlide += 1;
                     if (activeSlide >= 3) {
@@ -67,6 +93,10 @@ function menuControl() {
                     menuBtn[activeSlide].classList.add('is-active');
                     document.body.dataset.active = activeSlide;
                     document.body.classList.add('activate');
+                    btnDots.forEach((dt) => {
+                        dt.classList.remove('active');
+                    });
+                    btnDots[activeSlide].classList.add('active');
                 }
             })
         });
@@ -79,6 +109,10 @@ function menuControl() {
               activeSlide = false;
               bigMenu.classList.remove('has-active');
               controlSec.classList.remove('vis');
+              btnDots.forEach((dt) => {
+                  dt.classList.remove('active');
+              });
+
           })
         })
     }

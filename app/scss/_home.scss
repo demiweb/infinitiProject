@@ -1977,7 +1977,7 @@ body {
   position: fixed;
   background: url("../img/tv.png") no-repeat center / 100%;
   z-index: 1;
-  transition: top 0.3s ease-out, left 0.3s ease-out, letter-spacing 0.3s ease-out;
+  transition: top 0.3s ease-out, left 0.3s ease-out, letter-spacing 0.3s ease-out, transform 0.3s ease;
 
   .img {
     width: 18.5417vw;
@@ -2297,7 +2297,10 @@ body {
 
     transition: top 0.2s ease-out, right 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, opacity 0.1s ease;
     transition-delay: 0s !important;
-
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .picnic-bbq {
@@ -2489,8 +2492,84 @@ body {
 .mobile-top {
   display: none;
 }
+.dots {
+  display: none;
+}
 
 @media screen and (max-width: 767px) {
+  .menu-btn {
+    transition: all 0.4s ease-out;
+    &.is-hidden {
+      left:  100%;
+      bottom: -200px;
+      right: auto;
+      &.pool-button {
+        right: 100%;
+        left: auto;
+      }
+      & ~ .is-hidden {
+        left: -100vw;
+
+        bottom: -100px;
+      }
+    }
+
+  }
+  .dots {
+    pointer-events: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    position: absolute;
+    bottom: 17px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .single-dot {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    position: relative;
+
+    background: linear-gradient(319deg, #2e82c4 0%, #1b4d96 100%);
+    &::before {
+      display: inline-block;
+      content: '';
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(180deg, #72ffe7 0%, #fff 100%);
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+    &::after {
+      display: inline-block;
+      content: '';
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(90deg, #2e82c4 0%, #1b4d96 100%);
+      z-index: 3;
+    }
+    &.active {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
   .section-control {
     .btns {
 
@@ -2504,13 +2583,13 @@ body {
       }
       &.sld--prev {
         top: 92.0%;
-        left: 1.2717vw;
+        left: 1.217vw;
       }
       &.sld--next {
         transform: rotate(180deg);
 
         top: 92.0%;
-        right: 1.2717vw;
+        right: 1.217vw;
       }
       &::after {
         width: 5.0000vw;
@@ -2531,7 +2610,7 @@ body {
     }
   }
   .mobile-drop {
-    margin-right: 17px;
+    margin-right: 16px;
     position: relative;
     width: 13.8889vw;
     height: 314px;
@@ -2739,6 +2818,7 @@ body {
     }
   }
   .textuals {
+    transition: all 0.4s ease;
     p {
       font-size: 23px;
       line-height: 25px;
@@ -2766,8 +2846,9 @@ body {
     .textuals {
       max-width: 297px;
 
-      top: -68.4083vw;
+      top: -38.26vh;
       right: 9.65vw;
+      transform: translate(60%, 100%) rotate(35deg);
     }
   }
   .video-block {
@@ -2775,8 +2856,11 @@ body {
     border: 2px solid #1B4D96;
     width: 204px;
     height: 115px;
-    top: -200px;
-    left: 0;
+    top: -50px;
+    left: -250%;
+    transform: rotate(-145deg);
+    transition: top 0.5s ease-out, left 0.5s ease-out, letter-spacing 0.5s ease-out, transform 0.5s ease;
+
 
     .img {
       width: 100%;
@@ -2803,16 +2887,18 @@ body {
     &[data-active='0'] {
 
       .video-block {
-        top: -0.4167vw;
-        left: 42.0313vw;
+        top: 84.2833vw;
+        left: 5.35vw;
+        transform: rotate(0);
       }
     }
 
     &[data-active='1'] {
 
       .video-block {
-        top: -3.4667vw;
-        left: 34.7313vw;
+        top: 86.3333vw;
+        left: 5.4313vw;
+        transform: rotate(0);
       }
     }
 
@@ -2821,10 +2907,156 @@ body {
       .video-block {
         top: 266px;
         left: 137px;
+        transform: rotate(0);
+      }
+    }
+  }
+  .dance-button {
+    transition: all 0.4s ease-out !important;
+      .textuals {
+        max-width: 320px;
+        top: -35.0356vh;
+        right: 4.79vw;
+        p {
+          letter-spacing: -.004em;
+          strong {
+            letter-spacing: -.004em;
+          }
+        }
+        span {
+          margin-top: 1.7021vw;
+          padding-right: 1px;
+          + span {
+            margin-top:6.2vw;
+          }
+          br {
+            display: none;
+          }
+        }
+        transform: translate(60%, 100%) rotate(35deg);
+      }
+    .dance-music {
+      width: 80px;
+      height: 173px;
+      z-index: 3;
+    }
+    .dance-roller {
+      width: 54px;
+      height: 56px;
+    }
+    .dance-cocktails {
+      width: 120px;
+      height: 27px;
+    }
+    .dance-flamingo {
+    display: none;
+    }
+    > .img {
+      transition: all 0.4s ease-out;
+      .pic {
+        transition: all 0.3s ease-out;
+      }
+    }
+    &.is-active {
+      width: 386px;
+      height: 311px;
+      bottom: 23px;
+      left: -26px;
+      top: auto;
+      right: auto;
+      > .img {
+        width: 100%;
+        height: 100%;
+        .pic {
+          top: -4.6%;
+          right: 6.6%;
+          width: 37%;
+          height: 87%;
+        }
+      }
+      .dance-cocktails {
+        top: 35.75vw;
+        left: 28.5688vw;
+      }
+      .dance-music {
+        top: 32.7479vw;
+        right: 25.6063vw;
+      }
+      .dance-roller {
+        top: 55.729vw;
+        left: 42.0796vw;
+      }
+      .textuals {
+        transform: translate(0 ,0) rotate(0);
+        transition: all 0.4s ease-out;
       }
     }
   }
 
+
+  .picnic-button {
+    .textuals {
+      max-width: 290px;
+
+      top: -41.356vh;
+      right: 11.99vw;
+      transform: translate(60%, 100%) rotate(35deg);
+      span {
+        margin-top: 2.8021vw;
+      }
+      ol {
+        display: none;
+      }
+    }
+    .picnic-bbq {
+      width: 72px;
+      height: 93px;
+    }
+    .picnic-baloon1 {
+      width: 79px;
+      height: 148px;
+      top: -33.6979vw;
+      right: 96.3542vw;
+    }
+    .picnic-baloon2 {
+      width: 82px;
+      height: 153px;
+    }
+    .picnic-croa {
+      width: 73px;
+      height: 55px;
+
+    }
+    &.is-active {
+      width: 406px;
+      height: 237px;
+      left: -21px;
+      top: auto;
+      right: auto;
+      bottom: 56px;
+      .textuals {
+        transform: translate(0 ,0) rotate(0);
+        transition: all 0.4s ease-out;
+      }
+
+      .picnic-bbq {
+        top: 11.2458vw;
+        left: 53.7417vw;
+      }
+      .picnic-baloon1 {
+        top: -18.2437vw;
+        right: 33.0625vw;
+      }
+      .picnic-baloon2 {
+        top: -7.1583vw;
+        right: 8.8333vw;
+      }
+      .picnic-croa {
+        bottom: 21.5917vw;
+        left: 36vw;
+      }
+    }
+  }
 
   .pool-button {
     .delphine {
@@ -2875,6 +3107,10 @@ body {
       bottom: 98px;
       left: -15px;
 
+      .textuals {
+        transition: all .4s ease;
+        transform: translate(0, 0) rotate(0);
+      }
       .delphine {
         top: 34.1625vw;
         right: 27.0758vw;
