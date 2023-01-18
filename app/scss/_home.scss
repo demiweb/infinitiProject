@@ -2491,6 +2491,45 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+  .section-control {
+    .btns {
+
+    }
+    .btn-sld {
+      width: 13.8889vw;
+      height: 13.8889vw;
+      background: rgba(255, 255, 255, 0);
+      &::before {
+        content: none;
+      }
+      &.sld--prev {
+        top: 92.0%;
+        left: 1.2717vw;
+      }
+      &.sld--next {
+        transform: rotate(180deg);
+
+        top: 92.0%;
+        right: 1.2717vw;
+      }
+      &::after {
+        width: 5.0000vw;
+        height: 6.3889vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        content: '';
+        background: url("../img/arr-click-l.svg") no-repeat center / 100%;
+      }
+      img {
+        display: none;
+
+
+      }
+    }
+  }
   .mobile-drop {
     margin-right: 17px;
     position: relative;
