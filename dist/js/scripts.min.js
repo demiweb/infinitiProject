@@ -165,6 +165,23 @@ function interactDropBtn() {
 interactDropBtn();
 
 
+let dropMobile = [...document.querySelectorAll('.mobile-drop')];
+
+function interactDropMobile() {
+    if (dropMobile.length) {
+        dropMobile.forEach((btn) => {
+            let btn2 = btn.querySelector('.btn-mark');
+
+            btn2.addEventListener('click', () => {
+                btn.classList.toggle('open');
+            })
+        })
+    }
+}
+
+interactDropMobile();
+
+
 
 //btn-drop interact
 

@@ -2491,6 +2491,172 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+  .mobile-drop {
+    margin-right: 17px;
+    position: relative;
+    width: 13.8889vw;
+    height: 314px;
+    margin-top: -259px;
+    transition: margin-top 0.6s ease-out;
+
+    &::after {
+      z-index: -1;
+      background: #000;
+      height: 100%;
+      width: 16.6667vw;
+      display: inline-block;
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -1.3889vw;
+      border-radius: 8.3333vw;
+      background: linear-gradient(30deg, #2e82c4 0%, #2e82c4 38.28%, #1b4d96 100%);
+      opacity: 0.85;
+      transform: translate(-50%, 0);
+
+    }
+    &.open {
+      margin-top: -58px;
+      transition: margin-top 0.6s ease-out;
+
+      .btn-mark {
+        &::before {
+          background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
+
+        }
+        img {
+          transform: translate(-50%, -50%) rotate(90deg);        }
+      }
+
+      .soc-list {
+        a {
+          opacity: 1;
+          &:nth-child(3) {
+            bottom: 17.9vw;
+          }
+          &:nth-child(2) {
+            bottom: 36.1vw;
+          }
+          &:nth-child(1) {
+            bottom: 55.1vw;
+          }
+        }
+      }
+    }
+
+
+
+  }
+  .soc-list {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    a {
+      display: flex;
+      position: absolute;
+      cursor: pointer;
+      left: 0;
+      width: 13.8889vw;
+      height: 13.8889vw;
+      border-radius: 50%;
+      bottom: 0;
+      opacity: 0;
+      transition: bottom 0.6s ease-out, opacity 0.4s ease-out;
+
+      background: linear-gradient(303deg, #2e82c4 0%, #1b4d96 100%);
+
+      &::before {
+        z-index: 1;
+        transition: transform 0.2s ease, background 0.2s ease;
+        top: 2px;
+        right: 2px;
+        left: 2px;
+        bottom: 2px;
+        border-radius: 50%;
+        display: inline-block;
+        content: '';
+        position: absolute;
+        transform: rotate(0deg);
+        background: linear-gradient(180deg, #72ffe7 0%, #fff 100%);
+
+      }
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10.0000vw;
+        height: 10.0000vw;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        transition: transform 0.3s ease-out;
+      }
+      &:hover {
+        &::before {
+          transform: rotate(360deg);
+          transition: transform 0.2s ease, background 0.2s ease;
+          background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
+
+
+        }
+      }
+    };
+  }
+
+  .btn-mark {
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    left: 0;
+    width: 13.8889vw;
+    height: 13.8889vw;
+    border-radius: 50%;
+    bottom: 0;
+
+    background: linear-gradient(303deg, #2e82c4 0%, #1b4d96 100%);
+
+    &::before {
+      z-index: 1;
+      transition: transform 0.2s ease, background 0.2s ease;
+      top: 2px;
+      right: 2px;
+      left: 2px;
+      bottom: 2px;
+      border-radius: 50%;
+      display: inline-block;
+      content: '';
+      position: absolute;
+      transform: rotate(0deg);
+      background: linear-gradient(180deg, #72ffe7 0%, #fff 100%);
+
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10.0000vw;
+      height: 10.0000vw;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      z-index: 2;
+      transition: transform 0.3s ease-out;
+    }
+    &:hover {
+      &::before {
+        transform: rotate(360deg);
+        transition: transform 0.2s ease, background 0.2s ease;
+        background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
+
+
+      }
+    }
+
+  }
+
+
+
 
   body.activate {
     .mobile-top {
@@ -2517,10 +2683,20 @@ body {
     left: auto;
     right: 19px;
 
+    &::before {
+      background: linear-gradient(180deg, #72ffe7 0%, #fff 100%);
+
+    }
     img {
       width: 36px;
       height: 36px;
 
+    }
+    &:hover {
+      &::before {
+        background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
+
+      }
     }
   }
   .textuals {
@@ -2888,6 +3064,7 @@ body {
     align-items: flex-start;
     justify-content: flex-start;
   }
+
 
   .btn-xmark {
     cursor: pointer;
