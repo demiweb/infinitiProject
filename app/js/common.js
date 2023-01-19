@@ -273,6 +273,48 @@ modalControl();
 //modal-window
 
 
+//video control
+
+let videoBtn = [...document.querySelectorAll('.video-block .play')];
+let videoModal = document.querySelector('.modal-video');
+
+function controlVideoOpens() {
+    if (videoBtn.length) {
+        videoBtn.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.preventDefault();
+
+                let number = document.body.dataset.active;
+
+                let videoLink = menuBtn[Number(number)].dataset.vid;
+
+                videoModal.classList.add('active');
+                videoModal.querySelector('iframe').src = videoLink;
+            })
+        });
+
+        videoModal.addEventListener('click', () => {
+            videoModal.classList.remove('active');
+            videoModal.querySelector('iframe').src = '';
+        });
+        videoModal.querySelector('.close').addEventListener('click', () => {
+            videoModal.classList.remove('active');
+            videoModal.querySelector('iframe').src = '';
+        });
+        videoModal.querySelector('.video-container').addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+        });
+    }
+}
+
+controlVideoOpens();
+
+
+//video control
+
+
 
 
 
