@@ -15,10 +15,50 @@
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
 
-<body class="home">
+<body class="home" >
 //= details/header.html
 
+<div class="cursor-js" id="cursor-id">
+    <img src="./img/stick.svg" alt="">
+</div>
+<script>
+    //cursor following block
 
+    var box = document.getElementById("cursor-id");
+    var cursorBg = [...document.querySelectorAll('.back-cursor > div')];
+
+    function changePosCur(x, y, e) {
+        cursorBg.forEach((btn) => {
+            btn.style.left = x;
+            btn.style.top = y;
+        })
+    }
+
+    window.addEventListener('mousemove', function (e) {
+        var pos = e.pageX;
+        box.style.left = e.clientX + "px";
+        box.style.top = e.clientY + "px";
+        // cursorBg.forEach((btn) => {
+        //     btn.style.left = e.clientX + "px";
+        //     btn.style.top = e.clientY + "px";
+        // })
+
+
+        // if (e.target.closest('.cursor-js')) {
+        //     box.classList.add('go-cur');
+        //     var cur = e.target.closest('.cursor-js').dataset.cursor;
+        //     box.querySelector('.cursor-text').innerHTML = cur;
+        // } else {
+        //     box.classList.remove('go-cur');
+        //     box.querySelector('.cursor-text').innerHTML = '';
+        //
+        // }
+    });
+    window.addEventListener('load', () => {
+        box.style.left = e.clientX + "px";
+        box.style.top = e.clientY + "px";
+    })
+</script>
 <main>
 
     <section class="backblock ">
@@ -381,13 +421,19 @@
     </div>
 
 
-    <section class="section-control">
+    <section class="section-control ">
         <div class="btns">
             <div class="btn-sld sld--prev">
                 <img src="./img/arr-l.svg" alt="">
+                <div class="txt">
+                    <p></p>
+                </div>
             </div>
             <div class="btn-sld sld--next">
                 <img src="./img/arr-l.svg" alt="">
+                <div class="txt">
+                    <p></p>
+                </div>
             </div>
         </div>
         <div class="dots">
@@ -421,7 +467,7 @@
         </p>
 
 
-        <div data-vid="https://www.youtube.com/embed/dQw4w9WgXcQ" class="dance-button menu-btn ">
+        <div data-vid="https://www.youtube.com/embed/dQw4w9WgXcQ" data-name="לכולם מרוויחים" class=" dance-button menu-btn ">
             <div class="textuals">
                 <p><strong>באינפינטי כולם מרוויחים</strong></p>
                 <p>תמהיל דמי הניהול הנמוך בישראל</p>
@@ -476,7 +522,7 @@
                 </div>
             </div>
         </div>
-        <div data-vid="https://www.youtube.com/embed/s6QqV5NwbJE" class="picnic-button menu-btn ">
+        <div data-vid="https://www.youtube.com/embed/s6QqV5NwbJE" data-name="לכולם מוזמנים" class=" picnic-button menu-btn ">
 
             <div class="textuals">
                 <p><strong>באינפיניטי כולם מוזמנים</strong></p>
@@ -494,20 +540,22 @@
 
             </div>
             <div class="img">
-                <img src="./img/picnic-1.png" alt="">
-            </div>
-            <div class="picnic-bbq">
-                <img src="./img/bbq.png" alt="">
-            </div>
-            <div class="picnic-baloon1">
-                <img src="./img/baloon1.png" alt="">
-            </div>
-            <div class="picnic-baloon2">
-                <img src="./img/baloon2.png" alt="">
-            </div>
+                <div class="img">
+                    <img src="./img/picnic-1.png" alt="">
+                </div>
+                <div class="picnic-bbq">
+                    <img src="./img/bbq.png" alt="">
+                </div>
+                <div class="picnic-baloon1">
+                    <img src="./img/baloon1.png" alt="">
+                </div>
+                <div class="picnic-baloon2">
+                    <img src="./img/baloon2.png" alt="">
+                </div>
 
-            <div class="picnic-croa">
-                <img src="./img/croa.png" alt="">
+                <div class="picnic-croa">
+                    <img src="./img/croa.png" alt="">
+                </div>
             </div>
             <div class="btn-opener-mob">
                 <div class="tp">
@@ -533,7 +581,7 @@
                 </div>
             </div>
         </div>
-        <div data-vid="https://www.youtube.com/embed/Kee9Et2j7DA" class="pool-button menu-btn ">
+        <div data-vid="https://www.youtube.com/embed/Kee9Et2j7DA" data-name="לכולם נהנים" class=" pool-button menu-btn ">
             <div class="textuals">
                 <p><strong>באינפיניטי כולם נהנים</strong></p>
                 <p>תנאי VIP לכולם מהיום הראשון </p>
@@ -544,33 +592,35 @@
                 </span>
             </div>
 
-            <div class="chair1">
-                <img src="./img/chair1.png" alt="">
-            </div>
-            <div class="chair2">
-                <img src="./img/chair2.png" alt="">
-            </div>
-            <div class="chair3">
-                <img src="./img/chair3.png" alt="">
-            </div>
-            <div class="chair4">
-                <img src="./img/chair4.png" alt="">
-            </div>
-            <div class="pine">
-                <img src="./img/pineapple.png" alt="">
-            </div>
-            <div class="yellow">
-                <img src="./img/yellow.png" alt="">
-            </div>
-            <div class="ball">
-                <img src="./img/ball.png" alt="">
-            </div>
-            <div class="delphine">
-                <img src="./img/whale.png" alt="">
-            </div>
-            <div class="img">
-                <img src="./img/pool-1.png" alt="">
-            </div>
+           <div class="img">
+               <div class="chair1">
+                   <img src="./img/chair1.png" alt="">
+               </div>
+               <div class="chair2">
+                   <img src="./img/chair2.png" alt="">
+               </div>
+               <div class="chair3">
+                   <img src="./img/chair3.png" alt="">
+               </div>
+               <div class="chair4">
+                   <img src="./img/chair4.png" alt="">
+               </div>
+               <div class="pine">
+                   <img src="./img/pineapple.png" alt="">
+               </div>
+               <div class="yellow">
+                   <img src="./img/yellow.png" alt="">
+               </div>
+               <div class="ball">
+                   <img src="./img/ball.png" alt="">
+               </div>
+               <div class="delphine">
+                   <img src="./img/whale.png" alt="">
+               </div>
+               <div class="img">
+                   <img src="./img/pool-1.png" alt="">
+               </div>
+           </div>
             <div class="button-opener">
                 <p>באינפיניטי כולם נהנים</p>
                 <span>תנאי VIP לכולם מהיום הראשון  </span>

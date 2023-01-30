@@ -5,8 +5,31 @@ let btnSlds = [...document.querySelectorAll('.btn-sld')];
 let btnDots = [...document.querySelectorAll('.single-dot')];
 let bigMenu = document.querySelector('.big-menu');
 let globalClose = document.querySelector('.global-close');
+let getBack = document.querySelector('.get-back');
 let controlSec = document.querySelector('.section-control');
 let activeSlide = false;
+
+
+function changeArrowsText(numb) {
+    let prev = '0';
+    let next = '';
+    let btnPrev = document.querySelector('.btn-sld.sld--prev .txt p');
+    let btnNext = document.querySelector('.btn-sld.sld--next .txt p');
+    if (numb === 0) {
+        prev = menuBtn[2].dataset.name;
+        next = menuBtn[1].dataset.name;
+    }
+    if (numb === 1) {
+        prev = menuBtn[0].dataset.name;
+        next = menuBtn[2].dataset.name;
+    }
+    if (numb === 2) {
+        prev = menuBtn[1].dataset.name;
+        next = menuBtn[0].dataset.name;
+    }
+    btnPrev.innerHTML = prev;
+    btnNext.innerHTML = next;
+}
 
 function menuControl() {
     if (menuBtn.length) {
@@ -35,6 +58,8 @@ function menuControl() {
                     btn.classList.add('is-active');
                     bigMenu.classList.add('has-active');
                     controlSec.classList.add('vis');
+
+                    changeArrowsText(k);
                 }
             })
         });
@@ -53,6 +78,7 @@ function menuControl() {
                     dt.classList.remove('active');
                 });
                 dot.classList.add('active');
+                changeArrowsText(activeSlide);
             })
         });
         btnSlds.forEach((btn) => {
@@ -77,6 +103,7 @@ function menuControl() {
                         dt.classList.remove('active');
                     });
                     btnDots[activeSlide].classList.add('active');
+                    changeArrowsText(activeSlide);
                 } else {
                     activeSlide += 1;
                     if (activeSlide >= 3) {
@@ -97,10 +124,26 @@ function menuControl() {
                         dt.classList.remove('active');
                     });
                     btnDots[activeSlide].classList.add('active');
+                    changeArrowsText(activeSlide);
                 }
             })
         });
         globalClose.addEventListener('click', () => {
+          menuBtn.forEach((bt) => {
+              bt.classList.remove('is-active');
+              bt.classList.remove('is-hidden');
+              document.body.dataset.active = false;
+              document.body.classList.remove('activate');
+              activeSlide = false;
+              bigMenu.classList.remove('has-active');
+              controlSec.classList.remove('vis');
+              btnDots.forEach((dt) => {
+                  dt.classList.remove('active');
+              });
+
+          })
+        });
+        getBack.addEventListener('click', () => {
           menuBtn.forEach((bt) => {
               bt.classList.remove('is-active');
               bt.classList.remove('is-hidden');
@@ -127,6 +170,7 @@ menuControl();
 
 let shelfs = [...document.querySelectorAll('.back-center .plates-center ol li')];
 let mirrors = [...document.querySelectorAll('.back-left .mirror .img')];
+let backBlockAct = document.querySelector('.backblock');
 
 let partsComp = [...document.querySelectorAll('.part-back')];
 function shelfInteract() {
@@ -139,7 +183,10 @@ function shelfInteract() {
             sh.addEventListener('mouseout', () => {
                 mirrors[k].classList.remove('act');
             });
-            sh.addEventListener('click', () => {
+
+        });
+        partsComp.forEach((btn2) => {
+            btn2.addEventListener('click', () => {
                 if (numberOfpart === 0) {
                     partsComp[2].classList.add('hide');
 
@@ -156,6 +203,7 @@ function shelfInteract() {
                 numberOfpart++;
             })
         });
+
     }
 }
 shelfInteract();
@@ -221,7 +269,7 @@ interactDropMobile();
 
 //mobile anim
 
-let mobileShelf = [...document.querySelectorAll('.back-mobile .plates-center li')];
+let mobileShelf = [...document.querySelectorAll('.back-mobile')];
 
 function cotrolMobileShelf() {
     if (mobileShelf.length) {
@@ -253,15 +301,15 @@ function modalControl() {
                 document.querySelector('.modal-window').classList.add('visible');
             });
             modal.addEventListener('click', () => {
-                modal.classList.remove('visible');
+                // modal.classList.remove('visible');
             });
 
             modal.querySelector('.close').addEventListener('click', () => {
                 modal.classList.remove('visible');
             });
             modal.querySelector('.modal-container').addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
+                // e.preventDefault();
+                // e.stopPropagation();
             })
         })
 

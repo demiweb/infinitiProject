@@ -858,6 +858,14 @@
     opacity: 0;
     pointer-events: none;
   }
+  .btn {
+    .txt {
+      &::before {
+        width: 0;
+        opacity: 0;
+      }
+    }
+  }
 
   &:hover {
 
@@ -874,7 +882,11 @@
         max-width: 14.0625vw;
         opacity: 1;
         transition: max-width 0.3s ease-out, opacity 0.3s ease-out;
-
+        &::before {
+          width: 100%;
+          opacity: 0.84;
+          transition: opacity 0.2s ease-out, width 0.3s ease-out;
+        }
       }
     }
   }
@@ -903,6 +915,7 @@
       display: inline-block;
       content: '';
       opacity: 0.84;
+      transition: opacity 0.2s ease-out, width 0.3s ease-out;
     }
 
     font-weight: normal;
@@ -934,7 +947,9 @@
     width: 100%;
     height: 100%;
     transition: transform 0.2s ease-out, top 0.4s ease-out, left 0.4s ease-out, right 0.4s ease-out, bottom 0.4s ease-out;
-
+    > .img {
+      transform: none !important;
+    }
     > img {
       width: 100%;
       height: 100%;
@@ -993,7 +1008,9 @@
     height: 100%;
     transition: transform 0.2s ease;
     transform: rotate(-9deg);
-
+    > .img {
+      transform: none;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -1028,7 +1045,7 @@
     }
   }
 
-  &:hover {
+  &:not(.is-active):hover {
     .img {
       transition: transform 0.2s ease;
 
@@ -1194,12 +1211,17 @@
   }
 
   .btn.pink {
+    .btn-circle {
+      &::before {
+        background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
+      }
+    }
     &:hover {
 
 
       .btn-circle {
         &::before {
-          background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
+          background: linear-gradient(180deg,#72ffe7 0,#fff 100%);
           transform: rotate(360deg);
           transition: transform 0.2s linear, background-color 0.2s linear;
         }
@@ -1215,6 +1237,9 @@
     }
   }
 
+}
+.checkbox .wpcf7-list-item {
+  margin: 0;
 }
 
 .drop-btn {
@@ -1838,16 +1863,16 @@
     z-index: 2;
 
     &:checked {
-      & + span {
+      & ~ span.wpcf7-list-item-label {
         &::before {
-          background: url("../img/check.png") no-repeat 2px 4px / 61%, #1B4D96;
+          background: url("../img/check.png") no-repeat 2px 4px / 71%, #1B4D96;
 
         }
       }
     }
   }
 
-  span {
+  span.wpcf7-list-item-label {
     position: relative;
 
 
@@ -1879,6 +1904,9 @@
 .menu-btn {
   .button-opener {
     transition: opacity 0.2s ease;
+    &::before {
+      z-index: -1;
+    }
 
   }
 
@@ -2013,7 +2041,7 @@
   }
 
 
-  span {
+  span, .text_slide p {
     display: inline-block;
     margin-top: 1.3021vw;
 
@@ -2065,7 +2093,7 @@
     left: 1.1979vw;
     max-width: 19.8958vw;
 
-    span {
+    span, .text_slide p {
       margin-top: 0.8021vw;
     }
 
@@ -2093,7 +2121,7 @@
 .dance-button {
   .textuals {
     top: 8.4375vw;
-    left: -4.3750vw;
+    left: -3.3750vw;
     max-width: 20.1042vw;
   }
 
@@ -2312,7 +2340,7 @@ body {
     top: 12.2917vw;
     right: 16.2500vw;
 
-    span {
+    span, .text_slide p  {
       margin-top: 0.9021vw;
     }
   }
@@ -2697,7 +2725,47 @@ body {
 
     background: linear-gradient(180deg, #72ffe7 0%, #fff 100%);
   }
+  .txt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    position: absolute;
+    left: -0.2604vw;
+    top: -0.2604vw;
+    bottom: -0.2604vw;
+    padding: .2604vw 1.1854vw .2604vw 3.5592vw;
+
+    &::before {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to left, #2e82c4 0%, #2e82c4 56.32%, #1b4d96 100%);
+      display: inline-block;
+      content: '';
+      opacity: 0.84;
+      transition: opacity 0.2s ease-out, width 0.3s ease-out;
+    }
+    p {
+      font-weight: normal;
+      font-size: 1.0417vw;
+      line-height: 1.2500vw;
+      letter-spacing: -0.01em;
+      text-align: left;
+      color: #cce6f8;
+      white-space: nowrap;
+    }
+
+
+    overflow: hidden;
+    border-radius: 2.6042vw;
+    opacity: 0;
+    transition: max-width 0.3s ease-out, opacity 0.3s ease-out;
+
+  }
   img {
     position: absolute;
     top: 50%;
@@ -2716,6 +2784,9 @@ body {
       background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
 
     }
+    .txt {
+      opacity: 1;
+    }
   }
 
   &.sld--prev {
@@ -2729,6 +2800,13 @@ body {
 
     > img {
       transform: translate(-50%, -50%) rotate(180deg);
+    }
+    .txt {
+      left: auto;
+      right: -0.2604vw;
+      top: -0.2604vw;
+      bottom: -0.2604vw;
+      padding: .2604vw 3.5592vw .2604vw 1.1854vw;
     }
   }
 }
@@ -2939,7 +3017,46 @@ body {
   }
 }
 
+//body {
+//  cursor: url("../img/stick.svg"),  auto;
+//}
+
+.btn-sun {
+  cursor: pointer;
+}
+body {
+  //cursor: none !important;
+  * {
+    //cursor: none !important;
+  }
+}
+.cursor-js {
+  pointer-events: none;
+  width: 416px;
+  height: 416px;
+  position: fixed;
+  z-index: 2000;
+  display: flex;
+  img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-right: 5.5208vw;
+    margin-top: -2.0313vw;
+  }
+}
 @media screen and (max-width: 767px) {
+  .cursor-js {
+    display: none;
+  }
+  .textuals::after {
+    display: none;
+  }
+  .btn-sld {
+    .txt {
+      display: none;
+    }
+  }
   .menu-btn {
     transition: all 0.4s ease-out;
     &.is-hidden {
@@ -3025,13 +3142,17 @@ body {
         content: none;
       }
       &.sld--prev {
-        top: 92.0%;
+        //top: 92.0%;
+        top: auto;
+        bottom: 0.3%;
         left: 1.217vw;
       }
       &.sld--next {
         transform: rotate(180deg);
 
-        top: 92.0%;
+        //top: 92.0%;
+        top: auto;
+        bottom: 0.3%;
         right: 1.217vw;
       }
       &::after {
@@ -3204,15 +3325,7 @@ body {
       z-index: 2;
       transition: transform 0.3s ease-out;
     }
-    &:hover {
-      &::before {
-        transform: rotate(360deg);
-        transition: transform 0.2s ease, background 0.2s ease;
-        background: linear-gradient(180deg, #ff72ff 0%, #fff 100%);
 
-
-      }
-    }
 
   }
 
@@ -3300,13 +3413,14 @@ body {
       }
     }
 
-    span {
+    span, .text_slide p  {
 
       font-size: 6.9444vw;
       line-height: 6.1111vw;
 
       strong {
-
+        font-family: $second-font;
+        font-weight: 400;
       }
 
     }
@@ -3316,7 +3430,7 @@ body {
       justify-content: flex-start;
       flex-direction: row;
       flex-wrap: wrap;
-      margin-right: -1.1111vw;
+      margin-right: 0;
       margin-bottom: 3.0556vw;
     }
     ol li {
@@ -3330,18 +3444,27 @@ body {
         line-height: 6.1111vw;
       }
       &:first-child {
-        content: none;
+        &::before {
+          content: none;
+        }
+      }
+      &:last-child {
+        &::after {
+          content: '.';
+          font-size: 6.9444vw;
+          line-height: 6.1111vw;
+        }
       }
     }
   }
-  .pool-button .textuals span {
-    margin-top: 7.5000vw;
+  .pool-button .textuals span, .pool-button .textuals  .text_slide p  {
+    margin-top: 3.5000vw;
   }
   .pool-button {
     .textuals {
       max-width: 82.5000vw;
 
-      top: -38.26vh;
+      top: 22.2222vw;
       right: 9.65vw;
       transform: translate(60%, 100%) rotate(35deg);
     }
@@ -3416,7 +3539,8 @@ body {
     transition: all 0.4s ease-out !important;
       .textuals {
         max-width: 88.8889vw;
-        top: -35.0356vh;
+        //top: -28.04vh;
+        top: 22.2222vw;
         right: 4.79vw;
         p {
           letter-spacing: -.004em;
@@ -3424,7 +3548,7 @@ body {
             letter-spacing: -.004em;
           }
         }
-        span {
+        span, .text_slide p  {
           margin-top: 1.7021vw;
           padding-right: 1px;
           + span {
@@ -3459,15 +3583,24 @@ body {
       }
     }
     &.is-active {
+      //width: 107.2222vw;
+      //height: 86.3889vw;
+      //bottom: 6.3889vw;
+      //left: -7.2222vw;
+      //top: auto;
+      //right: auto;
+
       width: 107.2222vw;
-      height: 86.3889vw;
-      bottom: 6.3889vw;
+      height: auto;
+      bottom: 0;
       left: -7.2222vw;
-      top: auto;
+      top: 0;
       right: auto;
+      padding-top: 25vw;
+      padding-bottom: 6.3889vw;
       > .img {
         width: 100%;
-        height: 100%;
+        height: 86.3889vw;
         .pic {
           top: -4.6%;
           right: 6.6%;
@@ -3499,11 +3632,11 @@ body {
     .textuals {
       max-width: 80.5556vw;
 
-      top: -41.356vh;
+      top: 22.2222vw;
       right: 11.99vw;
       transform: translate(60%, 100%) rotate(35deg);
-      span {
-        margin-top: 2.8021vw;
+      span, .text_slide p  {
+        margin-top: 1.721vw;
       }
 
     }
@@ -3527,12 +3660,23 @@ body {
 
     }
     &.is-active {
+      //width: 112.7778vw;
+      //height: 65.8333vw;
+      //left: -5.8333vw;
+      //top: auto;
+      //right: auto;
+      //bottom: 15.5556vw;
       width: 112.7778vw;
-      height: 65.8333vw;
+      height: auto;
       left: -5.8333vw;
-      top: auto;
+      top: 0;
       right: auto;
-      bottom: 15.5556vw;
+      bottom: 0;
+      padding-bottom: 15.5556vw;
+      padding-top: 26.7vw;
+      > .img {
+        height: 65.8333vw;
+      }
       .textuals {
         transform: translate(0 ,0) rotate(0);
         transition: all 0.4s ease-out;
@@ -3544,7 +3688,7 @@ body {
       }
       .picnic-baloon1 {
         top: -18.2437vw;
-        right: 33.0625vw;
+        right: 32.0625vw;
       }
       .picnic-baloon2 {
         top: -7.1583vw;
@@ -3599,13 +3743,25 @@ body {
     }
 
     &.is-active {
-      top: auto;
+      //top: auto;
+      //right: auto;
+      //width: 108.6111vw;
+      //height: 59.4444vw;
+      //bottom: 27.2222vw;
+      //left: -4.1667vw;
+      top: 0;
       right: auto;
       width: 108.6111vw;
-      height: 59.4444vw;
-      bottom: 27.2222vw;
+      height: auto;
+      bottom: 0;
       left: -4.1667vw;
+      padding-bottom: 27.2222vw;
+      padding-top: 21vw;
 
+      > .img {
+        height: 59.4444vw;
+        width: 100%;
+      }
       .textuals {
         transition: all .4s ease;
         transform: translate(0, 0) rotate(0);
@@ -3655,6 +3811,13 @@ body {
       }
     }
   }
+  .menu-btn {
+    display: flex;
+    align-items: flex-end;
+    > .img {
+      position: relative;
+    }
+  }
   .checkbox {
     width: 100%;
     margin-top: 3.5125vw;
@@ -3663,7 +3826,7 @@ body {
       margin: 0;
     }
 
-    span {
+    span.wpcf7-list-item-label {
       padding-right: 13.3333vw;
       font-size: 3.8889vw;
       line-height: 4.7222vw;
@@ -3677,11 +3840,11 @@ body {
 
     }
   }
-  .checkbox input:checked + span::before {
+  .checkbox input:checked ~ span.wpcf7-list-item-label::before {
     background: url('../img/check.png') no-repeat 2px 4px/75%, #1b4d96;
   }
   .footer-btn {
-    width: 66.1111vw;
+    width: 68.1111vw;
     height: 10.8333vw;
     margin-top: 5.0000vw;
     margin-right: -1px;
@@ -3728,7 +3891,7 @@ body {
   }
   .form {
     width: 100%;
-    margin-top: 13.75vh;
+    margin-top: 11.75vh;
 
     form {
       flex-direction: column;
@@ -3768,7 +3931,7 @@ body {
     width: 100%;
     border-radius: 0px 0px 8.3333vw 8.3333vw;
     box-shadow: 0px 3px 6px rgba(77, 63, 63, 0.78);
-    padding: 8.7vh 13.0556vw 16.5626vh;
+    padding: 8.7vh 13.0556vw 8.5626vh;
     height: auto;
 
     .sun2 {
@@ -4046,7 +4209,8 @@ body {
     width: 81.3889vw;
     height: 44.4444vw;
     top: auto;
-    bottom: 91.68vw;
+    //bottom: 91.68vw;
+    bottom: 51.46vh;
     right: 23.6111vw;
 
     .btn-opener-mob {
@@ -4079,7 +4243,8 @@ body {
     width: 74.7222vw;
     height: 60.5556vw;
     left: -1.1111vw;
-    bottom: 3.3333vw;
+    //bottom: 3.3333vw;
+    bottom: 2vh;
     top: auto;
 
     .btn-opener-mob {
@@ -4113,7 +4278,8 @@ body {
   .picnic-button {
     width: 80.0000vw;
     height: 46.6667vw;
-    bottom: 54.7222vw;
+    //bottom: 54.7222vw;
+    bottom: 30.9vh;
     left: 22.5000vw;
 
     .img {
@@ -4159,7 +4325,9 @@ body {
 
     font-size: 8.6111vw;
     line-height: 1.02;
-    top: 26.9444vw;
+    //top: 26.9444vw;
+    top: auto;
+    bottom: 75.1vh;
     left: 50%;
     width: 80%;
     max-width: 80%;
@@ -4324,7 +4492,7 @@ body {
   .mirror {
     width: 42.2222vw;
     height: 43.6111vw;
-    top: 20.8333vw;
+    top: 8vh;
     left: -3px;
     right: auto;
     bottom: auto;
@@ -4371,4 +4539,15 @@ body {
       margin-top: 4vh;
     }
   }
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #fff;
+  border-color: #820782;
+  width: 100%;
+  text-align: center;
 }
