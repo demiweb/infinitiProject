@@ -18,47 +18,14 @@
 <body class="home" >
 //= details/header.html
 
-<div class="cursor-js" id="cursor-id">
-    <img src="./img/stick.svg" alt="">
+<div class="vid-global">
+    <video id="video-glob" src="./img/video-preview.mp4" type="video/mp4"  autoplay muted playsinline></video>
+    <div class="pl-btn" id="pl-btn">
+        <img src="./img/volume.svg" alt="">
+
+    </div>
 </div>
-<script>
-    //cursor following block
 
-    var box = document.getElementById("cursor-id");
-    var cursorBg = [...document.querySelectorAll('.back-cursor > div')];
-
-    function changePosCur(x, y, e) {
-        cursorBg.forEach((btn) => {
-            btn.style.left = x;
-            btn.style.top = y;
-        })
-    }
-
-    window.addEventListener('mousemove', function (e) {
-        var pos = e.pageX;
-        box.style.left = e.clientX + "px";
-        box.style.top = e.clientY + "px";
-        // cursorBg.forEach((btn) => {
-        //     btn.style.left = e.clientX + "px";
-        //     btn.style.top = e.clientY + "px";
-        // })
-
-
-        // if (e.target.closest('.cursor-js')) {
-        //     box.classList.add('go-cur');
-        //     var cur = e.target.closest('.cursor-js').dataset.cursor;
-        //     box.querySelector('.cursor-text').innerHTML = cur;
-        // } else {
-        //     box.classList.remove('go-cur');
-        //     box.querySelector('.cursor-text').innerHTML = '';
-        //
-        // }
-    });
-    window.addEventListener('load', () => {
-        box.style.left = e.clientX + "px";
-        box.style.top = e.clientY + "px";
-    })
-</script>
 <main>
 
     <section class="backblock ">
@@ -237,7 +204,41 @@
                 </div>
             </div>
         </div>
+        <div class="cursor-js" id="cursor-id">
+            <img src="./img/stick.svg" alt="">
+        </div>
+        <script>
+            //cursor following block
 
+            var box = document.getElementById("cursor-id");
+            var vdGlob = document.getElementById("video-glob");
+            var plVd = document.getElementById("pl-btn");
+
+
+            window.addEventListener('mousemove', function (e) {
+                var pos = e.pageX;
+                box.style.left = e.clientX + "px";
+                box.style.top = e.clientY + "px";
+
+            });
+            plVd.addEventListener('click', () => {
+                vdGlob.muted = false;
+                plVd.style.opacity = '0';
+            });
+            vdGlob.addEventListener('ended', () => {
+
+                vdGlob.closest('.vid-global').classList.add('hide');
+                document.querySelector('main').classList.add('vis');
+                setTimeout(() => {
+                    vdGlob.remove();
+                }, 300)
+            })
+
+
+
+
+
+        </script>
     </section>
     <div class="logo get-back">
         <img class="lazyload" data-src="./img/logo.png" alt="">
