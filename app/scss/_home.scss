@@ -1865,7 +1865,7 @@
     &:checked {
       & ~ span.wpcf7-list-item-label {
         &::before {
-          background: url("../img/check2.png") no-repeat 2px 4px / 71%, #1B4D96;
+          background: url("../img/check2.png") no-repeat 2px 2px / 72%, #1B4D96;
 
         }
       }
@@ -3122,7 +3122,8 @@ body {
     object-fit: cover;
   }
 }
-main {
+
+main.videomain {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -4645,18 +4646,17 @@ main {
     }
   }
 
-  @media screen and (max-height: 590px) {
+
+  @media screen and (max-height: 690px) {
+    .big-menu .title {
+      top: 10vh;
+    }
     .textuals .text_slide p, .textuals span {
-      font-size: 5.4vw;
+      font-size: 5.9vw;
       line-height: 4.9vw;
     }
     .pool-button .textuals .text_slide p, .pool-button .textuals span {
-      margin-top: 1.5vw;
-    }
-  }
-  @media screen and (max-height: 620px) {
-    .big-menu .title {
-      top: 9vh;
+      margin-top: 1.8vw;
     }
     .pool-button {
       bottom: 48.46vh;
@@ -4667,6 +4667,22 @@ main {
     .dance-button {
       bottom: 1vh;
     }
+  }
+  @media screen and (max-height: 590px) {
+    .textuals .text_slide p, .textuals span {
+      font-size: 5.4vw;
+      line-height: 4.9vw;
+    }
+    .pool-button .textuals .text_slide p, .pool-button .textuals span {
+      margin-top: 1.5vw;
+    }
+  }
+}
+body .textuals > p {
+  text-align: right;
+  width: 100%;
+  strong {
+    text-align: right;
   }
 }
 
