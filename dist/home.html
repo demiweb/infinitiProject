@@ -19,9 +19,9 @@
 
 
 <div class="vid-global">
-    <video id="video-glob" src="./img/video-preview.mp4" type="video/mp4"  autoplay muted playsinline></video>
+    <video id="video-glob" src="./img/video-preview.mp4" type="video/mp4"   playsinline></video>
     <div class="pl-btn" id="pl-btn">
-        <img src="./img/volume.svg" alt="">
+        <img src="./img/play.svg" alt="">
 
     </div>
 </div>
@@ -222,7 +222,7 @@
 
             });
             plVd.addEventListener('click', () => {
-                vdGlob.muted = false;
+                vdGlob.play();
                 plVd.style.opacity = '0';
             });
             vdGlob.addEventListener('ended', () => {
